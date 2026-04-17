@@ -1,0 +1,26 @@
+info:
+  name: Create
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: http://{{hostname}}:{{user_port}}/api/user/car
+  body:
+    type: json
+    data: "{\r
+
+      \  \"car_id\": 15,\r
+
+      \  \"color\": \"{{$randomColor}}\",\r
+
+      \  \"car_plate\": \"BZZ12345\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,26 @@
+info:
+  name: Cancel
+  type: http
+  seq: 2
+
+http:
+  method: PATCH
+  url: "{{protocol}}://{{hostname}}:{{booking_port}}/api/booking/:reservation_id/cancel"
+  params:
+    - name: reservation_id
+      value: "1407"
+      type: path
+  body:
+    type: json
+    data: "{\r
+
+      \    \"reason\": \"I dun wan anymore\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

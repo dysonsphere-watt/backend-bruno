@@ -1,0 +1,80 @@
+info:
+  name: Create
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{protocol}}://{{hostname}}:{{robot_port}}/api/robot"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"robot\": {\r
+
+      \        \"station_id\": 7000,\r
+
+      \        \"station_sector_id\": 4,\r
+
+      \        \"robot_code\": \"{{$randomMACAddress}}\",\r
+
+      \        \"vid\": \"\",\r
+
+      \        \"type\": \"Carpark\",\r
+
+      \        \"charging_mode\": \"mode-1\",\r
+
+      \        \"advs\": 1,\r
+
+      \        \"status\": 1,\r
+
+      \        \"service_type_ids\": [1,2],\r
+
+      \        \"components\": [\r
+
+      \            {\r
+
+      \                \"checklist_item_id\": 2,\r
+
+      \                \"serial_no\": \"BAT_001\"\r
+
+      \            },\r
+
+      \            {\r
+
+      \                \"checklist_item_id\": 1,\r
+
+      \                \"serial_no\": \"WHEEL_001\"\r
+
+      \            }\r
+
+      \        ],\r
+
+      \        \"ad_displays\": [\r
+
+      \            {\r
+
+      \                \"identifier\": \"ideppp\",\r
+
+      \                \"number\": \"q0wue0q9\",\r
+
+      \                \"name\": \"testname\",\r
+
+      \                \"type\": 1,\r
+
+      \                \"mac_address\": \"00:00:00:00:00:00\"\r
+
+      \            }\r
+
+      \        ]\r
+
+      \    }\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

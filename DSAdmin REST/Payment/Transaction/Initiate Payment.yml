@@ -1,0 +1,24 @@
+info:
+  name: Initiate Payment
+  type: http
+  seq: 6
+
+http:
+  method: POST
+  url: http://{{hostname}}:{{payment_port}}/api/payment/initiate
+  body:
+    type: json
+    data: "{\r
+
+      \    \"shared_key\": \"LgFNFmwOQWh0paJInqvSbIl9DiqEdw82\",\r
+
+      \    \"order_id\": 285\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

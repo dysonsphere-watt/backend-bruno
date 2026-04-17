@@ -1,0 +1,28 @@
+info:
+  name: Query All
+  type: http
+  seq: 2
+
+http:
+  method: GET
+  url: "{{protocol}}://{{hostname}}:{{robot_port}}/api/robot/map?filter[station_sector_id]=7&order[approved_at]=DESC&filter[type]=pcd"
+  params:
+    - name: filter[station_sector_id]
+      value: "7"
+      type: query
+    - name: order[approved_at]
+      value: DESC
+      type: query
+    - name: filter[type]
+      value: pcd
+      type: query
+  body:
+    type: text
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

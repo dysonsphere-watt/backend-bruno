@@ -1,0 +1,26 @@
+info:
+  name: Send SMS
+  type: http
+  seq: 4
+
+http:
+  method: POST
+  url: "{{protocol}}://{{hostname}}:{{notification_port}}/api/notification/sms"
+  body:
+    type: json
+    data: |-
+      {
+          "numbers": ["+6580802842"],
+          "template_code": "TEST_SMS",
+          "shared_key": "oHWgzqWsFggeQ78pBC3BAY6VIGTkbjMR",
+          "template_map": {
+              "text": "https://backend.watt.com.sg/api/user"
+          }
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,115 @@
+opencollection: 1.0.0
+
+info:
+  name: ACS
+
+request:
+  variables:
+    - name: key
+      value:
+    - name: endpoint
+      value: https://dyson-dev-comms.asiapacific.communication.azure.com
+  scripts:
+    - type: before-request
+      code: "// const crypto = pm.require('npm:crypto-js@4.2.0');\r
+
+        \r
+
+        // Set the Date header to our Date as a UTC String.\r
+
+        const dateStr = new Date().toUTCString();\r
+
+        req.getHeaders().upsert({key:'Date', value: dateStr});\r
+
+        console.log(dateStr);\r
+
+        \r
+
+        // Hash the request body using SHA256 and encode it as Base64\r
+
+        const hashedBodyStr = crypto.SHA256(req.getBody().raw).toString(CryptoJS.enc.Base64)\r
+
+        \r
+
+        console.log(`Hashing ${req.getBody().raw}`)\r
+
+        console.log(hashedBodyStr)\r
+
+        \r
+
+        // And add that to the header x-ms-content-sha256\r
+
+        req.getHeaders().upsert({\r
+
+        \    key:'x-ms-content-sha256',\r
+
+        \    value: hashedBodyStr\r
+
+        });\r
+
+        \r
+
+        // Get our previously specified endpoint variable\r
+
+        const endpoint = bru.getVar('endpoint')\r
+
+        console.log(endpoint);\r
+
+        // Remove the https, prefix to create a suitable \"Host\" value\r
+
+        const hostStr = endpoint.replace('https://','');\r
+
+        console.log(hostStr);\r
+
+        \r
+
+        // This gets the part of our URL that is after the endpoint, for example in https://contoso.communication.azure.com/sms, it will get '/sms'\r
+
+        const url = req.getUrl().toString().replace('{{endpoint}}','');\r
+
+        console.log(url);\r
+
+        \r
+
+        // Construct our string which we'll sign, using various previously created values.\r
+
+        const stringToSign = req.getMethod() + '\\n' + url + '\\n' + dateStr + ';' + hostStr + ';' + hashedBodyStr;\r
+
+        console.log(stringToSign);\r
+
+        \r
+
+        // Decode our access key from previously created variables, into bytes from base64.\r
+
+        const key = crypto.enc.Base64.parse(bru.getVar('key'));\r
+
+        console.log(key);\r
+
+        \r
+
+        // Sign our previously calculated string with HMAC 256 and our key. Convert it to Base64.\r
+
+        const signature = crypto.HmacSHA256(stringToSign, key).toString(crypto.enc.Base64);\r
+
+        console.log(signature);\r
+
+        \r
+
+        // Add our final signature in Base64 to the authorization header of the request.\r
+
+        req.getHeaders().upsert({\r
+
+        \    key:'Authorization',\r
+
+        \    value: \"HMAC-SHA256 SignedHeaders=date;host;x-ms-content-sha256&Signature=\" + signature\r
+
+        });\r
+
+        \r
+
+        req.getHeaders().upsert({ key: 'Content-Type', value: 'application/json' })"
+bundled: false
+extensions:
+  ignore:
+    - node_modules
+    - .git

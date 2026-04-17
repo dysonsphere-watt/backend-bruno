@@ -1,0 +1,35 @@
+info:
+  name: Create
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{protocol}}://{{hostname}}:{{ticketmaster_port}}/api/ticketmaster/comment/:parent-type/:parent-id"
+  params:
+    - name: parent-type
+      value: "1"
+      type: path
+    - name: parent-id
+      value: "10014"
+      type: path
+  body:
+    type: multipart-form
+    data:
+      - name: comment
+        type: text
+        value: |-
+          {
+              "body": "comment 4"
+          }
+      - name: files
+        type: file
+        value:
+          - /C:/Users/dyson/Desktop/1.png
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

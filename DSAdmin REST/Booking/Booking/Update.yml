@@ -1,0 +1,40 @@
+info:
+  name: Update
+  type: http
+  seq: 7
+
+http:
+  method: PUT
+  url: http://{{hostname}}:{{booking_port}}/api/booking/399
+  body:
+    type: json
+    data: "{\r
+
+      \    \"reservation\": {\r
+
+      \        \"iana_timezone\": \"Asia/Singapore\",\r
+
+      \        \"arrival_at\": \"15:50\",\r
+
+      \        \"date\": \"2024-11-27\",\r
+
+      \        \"service_id\": 7,\r
+
+      \        \"station_id\": 7005,\r
+
+      \        \"status\": 22\r
+
+      \    }\r
+
+      \    // \"station_lot_num\": \"123\",\r
+
+      \    // \"station_sector_id\": 4\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

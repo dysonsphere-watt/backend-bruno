@@ -1,0 +1,29 @@
+info:
+  name: Create
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{protocol}}://{{hostname}}:{{robot_port}}/api/robot/maintenance/:maint-id/media"
+  params:
+    - name: maint-id
+      value: "1181"
+      type: path
+  body:
+    type: multipart-form
+    data:
+      - name: media_file
+        type: file
+        value:
+          - /C:/Users/dyson/Desktop/ad4.mp4
+      - name: description
+        type: text
+        value: testtest
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

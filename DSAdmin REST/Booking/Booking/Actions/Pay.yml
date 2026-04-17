@@ -1,0 +1,30 @@
+info:
+  name: Pay
+  type: http
+  seq: 4
+
+http:
+  method: POST
+  url: "{{protocol}}://{{hostname}}:{{booking_port}}/api/booking/264/pay"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"payment_info\": {\r
+
+      \        \"payment_method\": 2,\r
+
+      \        \"user_card_id\": 36,\r
+
+      \        \"last_four\": \"8210\"\r
+
+      \    }\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

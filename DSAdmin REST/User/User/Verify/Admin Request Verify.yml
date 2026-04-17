@@ -1,0 +1,22 @@
+info:
+  name: Admin Request Verify
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{protocol}}://{{hostname}}:{{notification_port}}/api/user/:id/:type/req-verify"
+  params:
+    - name: id
+      value: "3915"
+      type: path
+    - name: type
+      value: sms
+      type: path
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

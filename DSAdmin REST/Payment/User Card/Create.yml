@@ -1,0 +1,18 @@
+info:
+  name: Create
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{protocol}}://{{hostname}}:{{payment_port}}/api/payment/user-card"
+  body:
+    type: json
+    data: "{\r\n    \"send_email\": true\r\n}"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

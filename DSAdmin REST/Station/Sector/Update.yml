@@ -1,0 +1,28 @@
+info:
+  name: Update
+  type: http
+  seq: 4
+
+http:
+  method: PUT
+  url: http://{{hostname}}:{{station_port}}/api/station/7065/sector/18
+  body:
+    type: multipart-form
+    data:
+      - name: name
+        type: text
+        value: UpdatedDaHZBasement
+      - name: map_img
+        type: file
+        value:
+          - /C:/Users/dyson/Desktop/parking-lot-2.jpg
+      - name: lot_search_time
+        type: text
+        value: "60"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

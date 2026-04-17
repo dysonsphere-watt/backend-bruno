@@ -1,0 +1,25 @@
+info:
+  name: Delete
+  type: http
+  seq: 4
+
+http:
+  method: DELETE
+  url: "{{protocol}}://{{hostname}}:{{ticketmaster_port}}/api/ticketmaster/comment/:parent-type/:parent-id/:comment-id"
+  params:
+    - name: parent-type
+      value: "1"
+      type: path
+    - name: parent-id
+      value: "10014"
+      type: path
+    - name: comment-id
+      value: "19"
+      type: path
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

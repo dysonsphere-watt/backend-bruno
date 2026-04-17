@@ -1,0 +1,26 @@
+info:
+  name: Create
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: http://{{hostname}}:{{station_port}}/api/station/7065/schedule
+  body:
+    type: json
+    data: "{\r
+
+      \    \"day_id\": 7,\r
+
+      \    \"time_start\": \"00:00\",\r
+
+      \    \"time_end\": \"00:00\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

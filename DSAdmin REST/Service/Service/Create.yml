@@ -1,0 +1,52 @@
+info:
+  name: Create
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: http://{{hostname}}:{{service_port}}/api/service
+  body:
+    type: json
+    data: "{\r
+
+      \    \"service\": {\r
+
+      \        \"name\": \"Omega Park Charge\",\r
+
+      \        \"code\": \"OMG-PARK-CHARGE\",\r
+
+      \        \"duration\": 60,\r
+
+      \        \"base_price\": 1000,\r
+
+      \        \"multiplier_price\": 8,\r
+
+      \        // \"time_from\": \"00:00\",\r
+
+      \        // \"time_to\": \"00:00\",\r
+
+      \        // \"date_from\": \"2024-05-22\",\r
+
+      \        // \"date_to\": \"2028-11-10\",\r
+
+      \        \"priority\": 1,\r
+
+      \        \"service_type_id\": 3,\r
+
+      \        \"pricing_type\": 2,\r
+
+      \        \"status\": 1,\r
+
+      \        \"day_schedule_ids\": [1,2,3,4,5,6,7]\r
+
+      \    }\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

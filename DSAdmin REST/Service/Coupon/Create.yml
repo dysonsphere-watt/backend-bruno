@@ -1,0 +1,48 @@
+info:
+  name: Create
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{protocol}}://{{hostname}}:{{service_port}}/api/service/coupon"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"coupon\": {\r
+
+      \        \"code\": \"asdf2\",\r
+
+      \        \"title\": \"30% off everything!\",\r
+
+      \        \"description\": \"30% off!\",\r
+
+      \        \"discount_type\": 2,\r
+
+      \        \"discount_amt\": 30,\r
+
+      \        \"start_date_time\": \"2024-06-10 00:00\",\r
+
+      \        \"expiry_date_time\": \"2027-10-01 00:00\",\r
+
+      \        \"station_ids\": [7005],\r
+
+      \        \"service_type_ids\": [1,2,3],\r
+
+      \        \"user_ids\": [22],\r
+
+      \        \"max_redemptions\": 99,\r
+
+      \        \"day_schedule_ids\": [2,3,4,5,6,7]\r
+
+      \    }\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

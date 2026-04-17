@@ -1,0 +1,19 @@
+info:
+  name: Delete
+  type: http
+  seq: 5
+
+http:
+  method: DELETE
+  url: "{{protocol}}://{{hostname}}:{{ticketmaster_port}}/api/ticketmaster/ticket/:id"
+  params:
+    - name: id
+      value: "9"
+      type: path
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

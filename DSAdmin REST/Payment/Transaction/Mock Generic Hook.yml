@@ -1,0 +1,21 @@
+info:
+  name: Mock Generic Hook
+  type: http
+  seq: 5
+
+http:
+  method: POST
+  url: "{{protocol}}://{{hostname}}:{{payment_port}}/api/payment/hook/generic"
+  headers:
+    - name: Hitpay-Signature
+      value: 99b7c8cecedd7164d64e8cdcb0e196f518f423e4996d48d9e6fd5b0cbc02ce23
+  body:
+    type: json
+    data: '{"event":"recurring_billing.method_attached","affected_method_id":"a0ff0816-ad00-476b-986b-5082d7e8548b","recurring_billing":{"id":"a0ff072d-3864-4fb3-8450-4e11ba3634eb","business_recurring_plans_id":null,"customer_name":null,"customer_email":"benjamin.goh@dysonsphere.com.sg","customer_phone_number":null,"customer_phone_number_country_code":null,"name":"lol","description":null,"reference":"kappa1234","cycle":"save_card","cycle_repeat":null,"cycle_frequency":null,"currency":"sgd","price":1,"amount":1,"times_to_be_charged":null,"times_charged":null,"status":"active","send_email":false,"save_card":1,"save_payment_method":1,"start_date_method":null,"redirect_url":"https:\/\/google.com","payment_methods":["card"],"payment_provider_charge_method":"card","created_at":"2026-02-04T10:26:15","updated_at":"2026-02-04T10:28:50","pause_from":null,"pause_until":null,"expires_at":null,"url":"https:\/\/hitpay-billing-sandbox.fly.dev\/9c23eac6-b96f-4bb1-9722-47fe84cfd9c0\/recurring-plan\/a0ff072d-3864-4fb3-8450-4e11ba3634eb","webhook":null,"webhook_retry_count":0,"webhook_last_attempt":null,"dbs_dda_reference":"RPTSB24FG9E","total_charge":0,"payment_method":{"card":{"brand":"mastercard","last4":"4444"}},"default_method":{"id":"a0ff0816-ad00-476b-986b-5082d7e8548b","payment_provider":"stripe_sg","payment_provider_charge_method":"card","payment_provider_customer_id":"cus_TulMetu2uImMht","subscription_id":"a0ff072d-3864-4fb3-8450-4e11ba3634eb","status":"completed","created_at":"2026-02-04T10:28:48+08:00","updated_at":"2026-02-04T10:28:50+08:00"},"methods":[]}}'
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

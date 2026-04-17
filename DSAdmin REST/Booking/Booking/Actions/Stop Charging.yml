@@ -1,0 +1,19 @@
+info:
+  name: Stop Charging
+  type: http
+  seq: 6
+
+http:
+  method: POST
+  url: "{{protocol}}://{{hostname}}:{{booking_port}}/api/booking/:id/charge/stop"
+  params:
+    - name: id
+      value: "1649"
+      type: path
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

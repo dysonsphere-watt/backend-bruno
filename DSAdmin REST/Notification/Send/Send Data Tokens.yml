@@ -1,0 +1,40 @@
+info:
+  name: Send Data Tokens
+  type: http
+  seq: 5
+
+http:
+  method: POST
+  url: "{{protocol}}://{{hostname}}:{{notification_port}}/api/notification/data/tokens"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"tokens\": [\r
+
+      \        \"dxaZm0T--9zj8o0C0n8pfE:APA91bFwH7w2NPUPgE9dBOiDeEKoxFhOVosFTqXaFYT9FKHCWpXrjiIxWVwHTBITC64JqjqKz-0Ofb-PvxPGMI6NMstm5fCyQL4HLmm5q110nuKSLmyv494\"\r
+
+      \    ],\r
+
+      \    \"shared_key\": \"oHWgzqWsFggeQ78pBC3BAY6VIGTkbjMR\",\r
+
+      \    \"data\": {\r
+
+      \        \"is_charging\": \"true\",\r
+
+      \        \"remaining_charge_time\": \"0\",\r
+
+      \        \"reservation_id\": \"1267\",\r
+
+      \        \"reservation_status\": \"10\"\r
+
+      \    }\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

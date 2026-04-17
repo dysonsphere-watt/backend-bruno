@@ -1,0 +1,18 @@
+info:
+  name: Redeem
+  type: http
+  seq: 6
+
+http:
+  method: POST
+  url: "{{protocol}}://{{hostname}}:{{service_port}}/api/service/coupon/redeem"
+  body:
+    type: json
+    data: "{\r\n    \r\n}"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

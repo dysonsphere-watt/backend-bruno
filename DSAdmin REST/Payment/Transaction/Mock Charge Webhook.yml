@@ -1,0 +1,30 @@
+info:
+  name: Mock Charge Webhook
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{protocol}}://{{hostname}}:{{payment_port}}/api/payment/hook/card-charge"
+  body:
+    type: form-urlencoded
+    data:
+      - name: payment_id
+        value: 9fcb2921-df4b-4fcf-84e3-1976fa44f462
+      - name: recurring_billing_id
+        value: 9c52ab17-2815-4308-8f8d-28753b38d642
+      - name: amount
+        value: "163.5"
+      - name: currency
+        value: sgd
+      - name: status
+        value: succeeded
+      - name: hmac
+        value: 5d56cc785325b50ec54fe2a83cb682a9dc6813bc044f95976d98154bb1327dfb
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

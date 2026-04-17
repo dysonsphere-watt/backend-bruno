@@ -1,0 +1,34 @@
+info:
+  name: Bulk Write
+  type: http
+  seq: 1
+
+http:
+  method: PUT
+  url: "{{protocol}}://{{hostname}}:{{setting_port}}/api/setting/setting"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"settings\": [\r
+
+      \        {\r
+
+      \            \"id\": 19,\r
+
+      \            \"key\": \"ROBOT_ASSIGN_LEAD_TIME\",\r
+
+      \            \"value\": \"6001\"\r
+
+      \        }\r
+
+      \    ]\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

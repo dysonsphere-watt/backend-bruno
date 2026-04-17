@@ -1,0 +1,24 @@
+info:
+  name: Update
+  type: http
+  seq: 2
+
+http:
+  method: PUT
+  url: http://{{hostname}}:{{user_port}}/api/user/car/6
+  body:
+    type: json
+    data: "{\r
+
+      \  \"color\": \"Red\",\r
+
+      \  \"car_plate\": \"ABC123\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

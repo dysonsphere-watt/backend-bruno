@@ -1,0 +1,32 @@
+info:
+  name: Create
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: http://{{hostname}}:8002/api/setting/giftcard/create
+  body:
+    type: json
+    data: "{\r
+
+      \  \"giftcard\": \"{{$randomProduct}}\",\r
+
+      \  \"code\": \"{{$randomCurrencyCode}}\",\r
+
+      \  \"balance\": {{$randomPrice}},\r
+
+      \  \"start_date\": 1632326400,\r
+
+      \  \"expiry_date\": 1663862400,\r
+
+      \  \"status\": 1\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

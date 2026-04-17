@@ -1,0 +1,18 @@
+info:
+  name: Update
+  type: http
+  seq: 2
+
+http:
+  method: PUT
+  url: http://{{hostname}}:{{station_port}}/api/station/amenity/17
+  body:
+    type: json
+    data: "{\r\n    \"name\": \"NewCarr\"\r\n}"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

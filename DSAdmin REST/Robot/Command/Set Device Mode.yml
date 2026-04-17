@@ -1,0 +1,22 @@
+info:
+  name: Set Device Mode
+  type: http
+  seq: 4
+
+http:
+  method: POST
+  url: "{{protocol}}://{{hostname}}:{{user_port}}/api/robot/:id/device-mode"
+  params:
+    - name: id
+      value: "5000"
+      type: path
+  body:
+    type: json
+    data: "{\r\n    \"mode\": 2\r\n}"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

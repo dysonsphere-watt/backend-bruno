@@ -1,0 +1,15 @@
+info:
+  name: Get Station Tenant Last Bought
+  type: http
+  seq: 14
+
+http:
+  method: GET
+  url: "{{protocol}}://{{hostname}}:{{advertisement_port}}/api/advertisement/station/11047/tenant-last-bought"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

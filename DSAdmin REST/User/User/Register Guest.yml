@@ -1,0 +1,31 @@
+info:
+  name: Register Guest
+  type: http
+  seq: 4
+
+http:
+  method: POST
+  url: "{{protocol}}://{{hostname}}:{{user_port}}/api/user/register/guest"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"full_name\": \"Benja Goh\",\r
+
+      \    \"otp_input\": \"0000\",\r
+
+      \    // \"email\": \"benjaguest@mail.com\",\r
+
+      \    // \"otp_method\": \"email\",\r
+
+      \    \"phone\": \"+6592473996\",\r
+
+      \    \"otp_method\": \"sms\"\r
+
+      }"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,28 @@
+info:
+  name: HitPay Initiate
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: https://api.sandbox.hit-pay.com/v1/payment-requests
+  headers:
+    - name: X-BUSINESS-API-KEY
+      value: 3b28ab9b5d0143f31d5409270433e459a11f94803dcd549ba2a87329512e6560
+  body:
+    type: json
+    data: |-
+      {
+        "amount": "123.00",
+        "currency": "sgd",
+        "payment_methods": ["paynow_online"],
+        "generate_qr": false,
+        "expiry_date": "2026-03-28 14:37:11"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

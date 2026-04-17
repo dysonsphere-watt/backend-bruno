@@ -1,0 +1,15 @@
+info:
+  name: Extend
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: http://{{hostname}}:{{booking_port}}/api/booking/3/extend
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

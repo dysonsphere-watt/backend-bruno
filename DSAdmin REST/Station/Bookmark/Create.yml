@@ -1,0 +1,24 @@
+info:
+  name: Create
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: http://{{hostname}}:{{station_port}}/api/station/bookmark
+  body:
+    type: json
+    data: "{\r
+
+      \    \"station_id\": 7001,\r
+
+      \    \"title\": \"Test 7001\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,28 @@
+info:
+  name: Push Topic
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{protocol}}://{{hostname}}:{{notification_port}}/api/notification/push/topic"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"topic\": \"weather\",\r
+
+      \    \"title\": \"Testtitleweather\",\r
+
+      \    \"body\": \"This is a test body of the weather push notification\",\r
+
+      \    \"shared_key\": \"oHWgzqWsFggeQ78pBC3BAY6VIGTkbjMR\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,35 @@
+info:
+  name: Mock Payment Webhook
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: "{{protocol}}://{{hostname}}:{{payment_port}}/api/payment/hook/payment"
+  body:
+    type: form-urlencoded
+    data:
+      - name: payment_id
+        value: 9ed9e44f-e830-4ed4-b43a-2ecce4f026f3
+      - name: payment_request_id
+        value: 9ed9e44f-d75f-47ab-831a-a66a4390392b
+      - name: phone
+        value: "+6592473996"
+        disabled: true
+      - name: amount
+        value: "229.25"
+      - name: currency
+        value: sgd
+      - name: status
+        value: completed
+      - name: reference_number
+        value: tmw8w4207767pw8gezseryvd0uzxe34rcpd6vqxsikyvmhqzqltpbmyj7cn0wri1
+      - name: hmac
+        value: 4d026c9e25f065a82fb42dec2367b2adbf887caf0ac7b2be38f52273df4b7834
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

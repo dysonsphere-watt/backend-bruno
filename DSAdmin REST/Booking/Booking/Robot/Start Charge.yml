@@ -1,0 +1,22 @@
+info:
+  name: Start Charge
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: http://{{hostname}}:{{station_port}}/api/booking/174/charge/start
+  body:
+    type: json
+    data: "{\r
+
+      \    \"qr_content\": \"jz42ti3ztv1s79mb\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,44 @@
+info:
+  name: Push Tokens
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{protocol}}://{{hostname}}:{{notification_port}}/api/notification/push/tokens"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"tokens\": [\r
+
+      \        \"fx72XEKrT2qckJyX2gK2dg:APA91bF5nUsy2gPYzq-S8RqVuD7PHzkSObH1zb9I-ns9VcqTIZKaBPRColEfTTk5PPq4GG2I4jZY4q2iPBSd7dGDlT8EnttgHX7LnVONXKNWg7WgyFepdqg\"\r
+
+      \    ],\r
+
+      \    \"shared_key\": \"oHWgzqWsFggeQ78pBC3BAY6VIGTkbjMR\",\r
+
+      \    \"template_code\": \"TEST_NOTIF\",\r
+
+      \    \"data\": {\r
+
+      \        \"hello\": \"world\",\r
+
+      \        \"test\": \"value\",\r
+
+      \        \"haci\": \"pupu\"\r
+
+      \    },\r
+
+      \    \"template_map\": {},\r
+
+      \    \"is_inboxed\": false\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

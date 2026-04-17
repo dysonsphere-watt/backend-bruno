@@ -1,0 +1,28 @@
+info:
+  name: Create
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{protocol}}://{{hostname}}:{{notification_port}}/api/notification/template"
+  body:
+    type: json
+    data: |-
+      {
+          "notice_template": {
+              "template_name": "Maintenance Pending Recovery Notice",
+              "code": "EMAIL_MAINT_PENDING_RECOVERY",
+              "type": "email",
+              "title": "maintenance set to pending recovery",
+              "body": "Maintenance ID {{.maintenanceID}} (Robot ID {{.robotID}}) has been set to pending recovery. An accompanying robot deployment ticket should be created as well",
+              "status": 1
+          }
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

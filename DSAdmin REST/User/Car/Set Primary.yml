@@ -1,0 +1,19 @@
+info:
+  name: Set Primary
+  type: http
+  seq: 5
+
+http:
+  method: POST
+  url: "{{protocol}}://{{hostname}}:{{user_port}}/api/user/car/:id/set-primary"
+  params:
+    - name: id
+      value: "6"
+      type: path
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

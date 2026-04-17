@@ -1,0 +1,29 @@
+info:
+  name: Update
+  type: http
+  seq: 2
+
+http:
+  method: PUT
+  url: "{{protocol}}://{{hostname}}:{{robot_port}}/api/robot/maintenance/:maint-id/activity/:m-act-id"
+  params:
+    - name: m-act-id
+      value: "21"
+      type: path
+    - name: maint-id
+      value: "1154"
+      type: path
+  body:
+    type: json
+    data: |-
+      {
+          "status": -1,
+          "note": "reject status transition"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

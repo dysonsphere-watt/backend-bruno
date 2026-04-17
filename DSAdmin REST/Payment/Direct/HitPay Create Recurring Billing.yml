@@ -1,0 +1,41 @@
+info:
+  name: HitPay Create Recurring Billing
+  type: http
+  seq: 4
+
+http:
+  method: POST
+  url: https://api.sandbox.hit-pay.com/v1/recurring-billing
+  headers:
+    - name: X-BUSINESS-API-KEY
+      value: 3b28ab9b5d0143f31d5409270433e459a11f94803dcd549ba2a87329512e6560
+  body:
+    type: json
+    data: "{\r
+
+      \    \"name\": \"lol\",\r
+
+      \    \"amount\": 1,\r
+
+      \    \"customer_email\": \"benjamin.goh@dysonsphere.com.sg\",\r
+
+      \    \"customer_name\": \"Benjamin Goh\",\r
+
+      \    \"start_date\": \"2026-12-30\",\r
+
+      \    \"payment_methods\": [\"card\"],\r
+
+      \    \"save_card\": \"true\",\r
+
+      \    \"redirect_url\": \"https://google.com\",\r
+
+      \    \"reference\": \"kappa1234\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,46 @@
+info:
+  name: Update
+  type: http
+  seq: 4
+
+http:
+  method: PUT
+  url: "{{protocol}}://{{hostname}}:{{service_port}}/api/service/coupon/23"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"coupon\": {\r
+
+      \        \"code\": \"service50p-alt\",\r
+
+      \        \"title\": \"50% off when charging!\",\r
+
+      \        \"description\": \"Charge your EV for a sweet 50% off!\",\r
+
+      \        \"discount_type\": 2,\r
+
+      \        \"discount_amt\": 50,\r
+
+      \        \"start_date_time\": \"2024-06-10 00:00\",\r
+
+      \        \"expiry_date_time\": \"2027-10-01 00:00\",\r
+
+      \        \"station_ids\": [7000, 7001],\r
+
+      \        \"service_type_ids\": [1,2,3],\r
+
+      \        \"user_ids\": [22, 23, 26, 32, 33],\r
+
+      \        \"day_schedule_ids\": [1,4]\r
+
+      \    }\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

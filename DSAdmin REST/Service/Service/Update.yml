@@ -1,0 +1,42 @@
+info:
+  name: Update
+  type: http
+  seq: 4
+
+http:
+  method: PUT
+  url: http://{{hostname}}:{{service_port}}/api/service/21
+  body:
+    type: json
+    data: "{\r
+
+      \    \"service\": {\r
+
+      \        \"name\": \"test service\",\r
+
+      \        \"code\": \"testasdf\",\r
+
+      \        \"duration\": 60,\r
+
+      \        \"price\": 3000,\r
+
+      \        \"priority\": 1,\r
+
+      \        \"service_type_id\": 1,\r
+
+      \        \"pricing_type\": 0,\r
+
+      \        \"status\": 1,\r
+
+      \        \"day_schedule_ids\": []\r
+
+      \    }\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

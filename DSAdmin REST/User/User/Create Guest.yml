@@ -1,0 +1,22 @@
+info:
+  name: Create Guest
+  type: http
+  seq: 18
+
+http:
+  method: POST
+  url: "{{protocol}}://{{hostname}}:{{user_port}}/api/user/guest"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"shared_key\": \"QVnKxjuk8YfjTjKkXYdyGZFDnv9jOZw4\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

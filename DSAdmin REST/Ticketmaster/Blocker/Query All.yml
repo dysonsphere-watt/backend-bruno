@@ -1,0 +1,25 @@
+info:
+  name: Query All
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{protocol}}://{{hostname}}:{{ticketmaster_port}}/api/ticketmaster/:resource-type/:resource-id/blocker"
+  params:
+    - name: resource-type
+      value: ticket
+      type: path
+    - name: resource-id
+      value: "1"
+      type: path
+  body:
+    type: text
+    data: "{\r\n    \"send_email\": true\r\n}"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

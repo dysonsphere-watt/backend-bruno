@@ -1,0 +1,26 @@
+info:
+  name: Create
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{protocol}}://{{hostname}}:{{port}}/api/v1/resource"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"role_id\": 1,\r
+
+      \    \"method\": \"GET\",\r
+
+      \    \"path\": \"/api/v1/robot/*/test/*/log-file\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,18 @@
+info:
+  name: Delete
+  type: http
+  seq: 9
+
+http:
+  method: DELETE
+  url: "{{protocol}}://{{hostname}}:{{user_port}}/api/user/33"
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

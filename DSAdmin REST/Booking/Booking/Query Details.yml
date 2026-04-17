@@ -1,0 +1,22 @@
+info:
+  name: Query Details
+  type: http
+  seq: 9
+
+http:
+  method: GET
+  url: "{{protocol}}://{{hostname}}:{{booking_port}}/api/booking/:reservation_id/details?user_timestamp=2025-05-08T16%3A23%3A17%2B08%3A00"
+  params:
+    - name: user_timestamp
+      value: 2025-05-08T16%3A23%3A17%2B08%3A00
+      type: query
+    - name: reservation_id
+      value: "742"
+      type: path
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

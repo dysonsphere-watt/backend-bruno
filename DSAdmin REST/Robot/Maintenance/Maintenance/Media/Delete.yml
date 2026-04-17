@@ -1,0 +1,22 @@
+info:
+  name: Delete
+  type: http
+  seq: 3
+
+http:
+  method: DELETE
+  url: "{{protocol}}://{{hostname}}:{{robot_port}}/api/robot/maintenance/:maint-id/media/:media-id"
+  params:
+    - name: maint-id
+      value: "8037"
+      type: path
+    - name: media-id
+      value: "8"
+      type: path
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

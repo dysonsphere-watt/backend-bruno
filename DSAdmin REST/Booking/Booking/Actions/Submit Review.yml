@@ -1,0 +1,26 @@
+info:
+  name: Submit Review
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: http://{{hostname}}:{{booking_port}}/api/booking/65/review
+  body:
+    type: json
+    data: "{\r
+
+      \    \"rating\": 5.0,\r
+
+      \    \"car_id\": 1,\r
+
+      \    \"review_text\": \"test review lol\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

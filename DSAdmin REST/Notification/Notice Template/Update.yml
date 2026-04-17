@@ -1,0 +1,34 @@
+info:
+  name: Update
+  type: http
+  seq: 4
+
+http:
+  method: PUT
+  url: "{{protocol}}://{{hostname}}:{{notification_port}}/api/notification/template/6"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"notice_template\": {\r
+
+      \        \"code\": \"TEST123-updated\",\r
+
+      \        \"type\": \"sms\",\r
+
+      \        \"title\": \"This is a test notification\",\r
+
+      \        \"body\": \"This is the test notification body. {{   .testVariable      }}\",\r
+
+      \        \"status\": 1\r
+
+      \    }\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

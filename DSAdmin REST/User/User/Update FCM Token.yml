@@ -1,0 +1,22 @@
+info:
+  name: Update FCM Token
+  type: http
+  seq: 15
+
+http:
+  method: PUT
+  url: "{{protocol}}://{{hostname}}:{{user_port}}/api/user/fcm-token"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"fcm_token\": \"c40BEDbixC-OrrRxaY0xGB:APA91bEzDUywijYo2RVVCqbtnzmcF7hvATw0xYMDGEh1kKVZRtV3YGbbUCfSFZKw3PfsKxYMmIb0GXVldfkN6v6Eu5hU5qGp27hj4bpTSWMFkkrYNi0e2C0\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

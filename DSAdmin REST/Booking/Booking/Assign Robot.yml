@@ -1,0 +1,22 @@
+info:
+  name: Assign Robot
+  type: http
+  seq: 11
+
+http:
+  method: PATCH
+  url: "{{protocol}}://{{hostname}}:{{booking_port}}/api/booking/:id/assign-robot?robot_id=7014"
+  params:
+    - name: robot_id
+      value: "7014"
+      type: query
+    - name: id
+      value: "226"
+      type: path
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

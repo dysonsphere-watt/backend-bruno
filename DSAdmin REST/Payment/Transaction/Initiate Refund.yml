@@ -1,0 +1,26 @@
+info:
+  name: Initiate Refund
+  type: http
+  seq: 7
+
+http:
+  method: POST
+  url: "{{protocol}}://{{hostname}}:{{payment_port}}/api/payment/refund"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"order_id\": 206,\r
+
+      \    \"amount\": 300,\r
+
+      \    \"shared_key\": \"LgFNFmwOQWh0paJInqvSbIl9DiqEdw82\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

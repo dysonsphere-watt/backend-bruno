@@ -1,0 +1,15 @@
+info:
+  name: Generate QR Code
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{protocol}}://{{hostname}}:{{booking_port}}/api/booking/174/qr/charge"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

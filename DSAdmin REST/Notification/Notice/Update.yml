@@ -1,0 +1,40 @@
+info:
+  name: Update
+  type: http
+  seq: 2
+
+http:
+  method: PUT
+  url: "{{protocol}}://{{hostname}}:{{notification_port}}/api/notification/notice/9"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"topic\": \"testsend-updated\",\r
+
+      \    \"title\": \"helo friends\",\r
+
+      \    \"body\": \"hello friends, the body\",\r
+
+      \    \"type\": \"sms\",\r
+
+      \    \"send_at\": \"2024-08-11 16:30\",\r
+
+      \    \"iana_timezone\": \"Asia/Singapore\",\r
+
+      \    \"status\": 1,\r
+
+      \    \"user_ids\": [22],\r
+
+      \    \"role_ids\": [1,2],\r
+
+      \    \"notice_template_id\": 3\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

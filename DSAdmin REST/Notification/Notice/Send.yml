@@ -1,0 +1,42 @@
+info:
+  name: Send
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{protocol}}://{{hostname}}:{{notification_port}}/api/notification/notice/send"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"topic\": \"ayo\",\r
+
+      \    \"title\": \"aosidjsaoij\",\r
+
+      \    \"body\": \"summon an apollo USA\",\r
+
+      \    \"type\": \"sms\",\r
+
+      \    // \"send_at\": \"2025-01-03 10:25\",\r
+
+      \    // \"iana_timezone\": \"Asia/Singapore\",\r
+
+      \    \"send_at_timestamp\": \"2026-01-03T10:29:00+08:00\",\r
+
+      \    \"status\": 1,\r
+
+      \    \"role_ids\": [1],\r
+
+      \    \"user_ids\": [],\r
+
+      \    \"notice_template_id\": 0\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

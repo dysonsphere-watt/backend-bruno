@@ -1,0 +1,28 @@
+info:
+  name: Query
+  type: http
+  seq: 2
+
+http:
+  method: GET
+  url: "{{protocol}}://{{hostname}}:{{log_port}}/api/log?order[id]=ASC&filter[application_type]=robot&created_at_from=2025-10-20 16:00:00&created_at_to=2025-10-21 15:59:59"
+  params:
+    - name: order[id]
+      value: ASC
+      type: query
+    - name: filter[application_type]
+      value: robot
+      type: query
+    - name: created_at_from
+      value: 2025-10-20 16:00:00
+      type: query
+    - name: created_at_to
+      value: 2025-10-21 15:59:59
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

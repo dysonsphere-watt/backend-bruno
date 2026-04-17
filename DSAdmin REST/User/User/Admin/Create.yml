@@ -1,0 +1,55 @@
+info:
+  name: Create
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{protocol}}://{{hostname}}:{{user_port}}/api/user"
+  body:
+    type: multipart-form
+    data:
+      - name: full_name
+        type: text
+        value: aspdojapfajpoj
+      - name: password
+        type: text
+        value: Password@1234
+      - name: password2
+        type: text
+        value: "123456"
+      - name: email
+        type: text
+        value: benjamin2471@gmail.com
+      - name: phone
+        type: text
+        value: "+00000000000001"
+      - name: date_of_birth
+        type: text
+        value: 1997-10-05
+      - name: gender
+        type: text
+        value: M
+      - name: role_id
+        type: text
+        value: "15"
+      - name: send_email_verify
+        type: text
+        value: "true"
+      - name: send_phone_verify
+        type: text
+        value: "true"
+        disabled: true
+      - name: send_email_credentials
+        type: text
+        value: "true"
+      - name: company_id
+        type: text
+        value: "1"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

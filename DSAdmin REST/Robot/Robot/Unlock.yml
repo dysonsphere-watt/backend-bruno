@@ -1,0 +1,23 @@
+info:
+  name: Unlock
+  type: http
+  seq: 11
+
+http:
+  method: POST
+  url: "{{protocol}}://{{hostname}}:{{robot_port}}/api/robot/unlock"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"vid\": \"ds1001\",\r
+
+      \    \"token\": \"bFSfWdPZrZ360tuECRaCFWgdIgZGMixfzSUAbKlvQUwAQukkmF18ZslbXfHNvvCl\"\r
+
+      }"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

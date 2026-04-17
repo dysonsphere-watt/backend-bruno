@@ -1,0 +1,29 @@
+info:
+  name: Reset
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{protocol}}://{{hostname}}:{{user_port}}/api/user/password/reset"
+  body:
+    type: json
+    data: |-
+      // {
+      //     "otp_input": "090736",
+      //     "phone": "+6592473996",
+      //     "new_password": "Benjamin123"
+      // }
+
+      {
+        "is_dashboard": true,
+        "token": "2eOgN20Zke6bOxIOz7tQLA7Qu2CO3oGm",
+        "new_password": "Password@1234"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

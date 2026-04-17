@@ -1,0 +1,44 @@
+info:
+  name: Push Custom Tokens
+  type: http
+  seq: 7
+
+http:
+  method: POST
+  url: "{{protocol}}://{{hostname}}:{{notification_port}}/api/notification/push/custom/tokens"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"tokens\": [\r
+
+      \        \"et8sJa1RETMLJ8T44Uw-M-:APA91bHn7b4XN316lYWrSBdre7wGQVhr_71NuAjIBHasD14_ncBZ8Gm0z4NeTSPQRlbWV6srIRP3jFfSe_YeTnywVrr3kg4uj9B19c_3kJdUky9yyFjhLoo\",\r
+
+      \        \"e3O3Vr6WMkv-M1ijLda2Qz:APA91bHFkA1xYiKbBX-ZC8HUsWraVij-1Zd0mNoi3Z_csklTI4nMIGrHUNCWDxk9LIY0Svvt0tREt8TtQYbiI5zY6pC5jYEgVznzE3gswOC7NSTVTAqhmx0\"\r
+
+      \    ],\r
+
+      \    \"shared_key\": \"oHWgzqWsFggeQ78pBC3BAY6VIGTkbjMR\",\r
+
+      \    \"data\": {\r
+
+      \        \"hello\": \"world\",\r
+
+      \        \"test\": \"value\",\r
+
+      \        \"haci\": \"pupu\"\r
+
+      \    },\r
+
+      \    \"title\": \"title here\",\r
+
+      \    \"body\": \"body here\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

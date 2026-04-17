@@ -1,0 +1,39 @@
+info:
+  name: Login
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{protocol}}://{{hostname}}:{{port}}/login"
+  body:
+    type: json
+    data: "{\r
+
+      \    // \"username\": \"labtestadmin\",\r
+
+      \    // \"password\": \"a0dpoa6sv9so5vasdpo\"\r
+
+      \    \"username\": \"testuser\",\r
+
+      \    \"password\": \"password\"\r
+
+      }"
+  auth: inherit
+
+runtime:
+  scripts:
+    - type: after-response
+      code: "if (res.getStatus() == 200) {\r
+
+        \    const data = res.getBody()\r
+
+        \    bru.setVar(\"auth\", data.token);\r
+
+        }"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

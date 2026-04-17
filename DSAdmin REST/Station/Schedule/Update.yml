@@ -1,0 +1,26 @@
+info:
+  name: Update
+  type: http
+  seq: 3
+
+http:
+  method: PUT
+  url: http://{{hostname}}:{{station_port}}/api/station/7000/schedule/23
+  body:
+    type: json
+    data: "{\r
+
+      \    \"day\": 2,\r
+
+      \    \"time_start\": \"01:00\",\r
+
+      \    \"time_end\": \"23:00\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

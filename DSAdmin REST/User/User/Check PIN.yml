@@ -1,0 +1,18 @@
+info:
+  name: Check PIN
+  type: http
+  seq: 13
+
+http:
+  method: POST
+  url: "{{protocol}}://{{hostname}}:{{user_port}}/api/user/pin/check"
+  body:
+    type: json
+    data: "{\r\n    \"pin\": \"123456\"\r\n}"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

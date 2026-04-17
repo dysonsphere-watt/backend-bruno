@@ -1,0 +1,18 @@
+info:
+  name: Recreate Robot Users
+  type: http
+  seq: 12
+
+http:
+  method: POST
+  url: "{{protocol}}://{{hostname}}:{{robot_port}}/api/robot/user-create"
+  body:
+    type: json
+    data: "{\r\n    \"vids\": []\r\n}"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

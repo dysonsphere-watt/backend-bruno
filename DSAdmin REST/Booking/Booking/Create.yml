@@ -1,0 +1,47 @@
+info:
+  name: Create
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: "{{protocol}}://{{hostname}}:{{booking_port}}/api/booking"
+  body:
+    type: json
+    data: |-
+      {
+          "coupon_code": "",
+          // "user_timestamp": "2025-07-27T17:26:39+08:00",
+          "payment_info": {
+              "payment_method": 1,
+              "user_card_id": 10,
+              "last_four": "4444"
+          },
+
+          "reservation": {
+              "arrival_timestamp": "2026-04-07T18:18:00+08:00",
+              "duration": 60,
+              "charging_service_id": 23,
+              // "booking_service_id": 24,
+              "station_id": 7005
+          },
+          "station_lot_num": "104",
+          "station_sector_id": 8,
+          "user_car_id": 8
+
+          // ,"share_booking": true,
+          // "share_booking_email": "benjamin.goh@dysonsphere.com.sg"
+          // "share_booking_phone": "+6580802842"
+
+          // "station_lot_num": "Lot 123",
+          // "station_sector_id": 4
+          // ,"locked_vid": "ds0200",
+          // "lock_token": "4pflHkPVNNDPnfnD6d3muCP6bOOIAJVjQfch94uWeJagSvOGphxpErt4MnDDQH8"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

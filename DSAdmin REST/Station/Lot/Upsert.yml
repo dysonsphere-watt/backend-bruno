@@ -1,0 +1,596 @@
+info:
+  name: Upsert
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: http://{{hostname}}:{{station_port}}/api/station/7005/sector/8/lot
+  body:
+    type: json
+    data: "{\r
+
+      \  \"station_lots\": [\r
+
+      \    {\r
+
+      \      \"id\": 5,\r
+
+      \      \"station_sector_id\": 8,\r
+
+      \      \"label\": \"100\",\r
+
+      \      \"lot_type_id\": 4,\r
+
+      \      \"x_coord\": 0.5,\r
+
+      \      \"y_coord\": 1.23,\r
+
+      \      \"annotation_type\": \"point\",\r
+
+      \      \"annotation_x_coord\": 0,\r
+
+      \      \"annotation_y_coord\": 0,\r
+
+      \      \"status\": 1,\r
+
+      \      \"station_lot_annotations\": [\r
+
+      \        {\r
+
+      \          \"text\": \"helloooo\",\r
+
+      \          \"station_lot_id\": 5\r
+
+      \        },\r
+
+      \        {\r
+
+      \          \"text\": \"there\",\r
+
+      \          \"station_lot_id\": 5\r
+
+      \        },\r
+
+      \        {\r
+
+      \          \"text\": \"friend\",\r
+
+      \          \"station_lot_id\": 5\r
+
+      \        }\r
+
+      \      ]\r
+
+      \    },\r
+
+      \    {\r
+
+      \      \"id\": 8,\r
+
+      \      \"station_sector_id\": 8,\r
+
+      \      \"label\": \"101\",\r
+
+      \      \"lot_type_id\": 4,\r
+
+      \      \"x_coord\": 0.5,\r
+
+      \      \"y_coord\": 1.23,\r
+
+      \      \"annotation_type\": \"point\",\r
+
+      \      \"annotation_x_coord\": 0,\r
+
+      \      \"annotation_y_coord\": 0,\r
+
+      \      \"status\": 1,\r
+
+      \      \"station_lot_annotations\": []\r
+
+      \    },\r
+
+      \    {\r
+
+      \      \"id\": 9,\r
+
+      \      \"station_sector_id\": 8,\r
+
+      \      \"label\": \"102\",\r
+
+      \      \"lot_type_id\": 4,\r
+
+      \      \"x_coord\": 0.5,\r
+
+      \      \"y_coord\": 1.23,\r
+
+      \      \"annotation_type\": \"point\",\r
+
+      \      \"annotation_x_coord\": 0,\r
+
+      \      \"annotation_y_coord\": 0,\r
+
+      \      \"status\": 1,\r
+
+      \      \"station_lot_annotations\": []\r
+
+      \    },\r
+
+      \    {\r
+
+      \      \"id\": 10,\r
+
+      \      \"station_sector_id\": 8,\r
+
+      \      \"label\": \"103\",\r
+
+      \      \"lot_type_id\": 4,\r
+
+      \      \"x_coord\": 0.5,\r
+
+      \      \"y_coord\": 1.23,\r
+
+      \      \"annotation_type\": \"point\",\r
+
+      \      \"annotation_x_coord\": 0,\r
+
+      \      \"annotation_y_coord\": 0,\r
+
+      \      \"status\": 1,\r
+
+      \      \"station_lot_annotations\": []\r
+
+      \    },\r
+
+      \    {\r
+
+      \      \"id\": 11,\r
+
+      \      \"station_sector_id\": 8,\r
+
+      \      \"label\": \"104\",\r
+
+      \      \"lot_type_id\": 4,\r
+
+      \      \"x_coord\": 0.5,\r
+
+      \      \"y_coord\": 1.23,\r
+
+      \      \"annotation_type\": \"point\",\r
+
+      \      \"annotation_x_coord\": 0,\r
+
+      \      \"annotation_y_coord\": 0,\r
+
+      \      \"status\": 1,\r
+
+      \      \"station_lot_annotations\": []\r
+
+      \    },\r
+
+      \    {\r
+
+      \      \"id\": 12,\r
+
+      \      \"station_sector_id\": 8,\r
+
+      \      \"label\": \"105\",\r
+
+      \      \"lot_type_id\": 4,\r
+
+      \      \"x_coord\": 0.5,\r
+
+      \      \"y_coord\": 1.23,\r
+
+      \      \"annotation_type\": \"point\",\r
+
+      \      \"annotation_x_coord\": 0,\r
+
+      \      \"annotation_y_coord\": 0,\r
+
+      \      \"status\": 1,\r
+
+      \      \"station_lot_annotations\": []\r
+
+      \    },\r
+
+      \    {\r
+
+      \      \"id\": 13,\r
+
+      \      \"station_sector_id\": 8,\r
+
+      \      \"label\": \"106\",\r
+
+      \      \"lot_type_id\": 4,\r
+
+      \      \"x_coord\": 0.5,\r
+
+      \      \"y_coord\": 1.23,\r
+
+      \      \"annotation_type\": \"point\",\r
+
+      \      \"annotation_x_coord\": 0,\r
+
+      \      \"annotation_y_coord\": 0,\r
+
+      \      \"status\": 1,\r
+
+      \      \"station_lot_annotations\": []\r
+
+      \    },\r
+
+      \    {\r
+
+      \      \"id\": 14,\r
+
+      \      \"station_sector_id\": 8,\r
+
+      \      \"label\": \"107\",\r
+
+      \      \"lot_type_id\": 4,\r
+
+      \      \"x_coord\": 0.5,\r
+
+      \      \"y_coord\": 1.23,\r
+
+      \      \"annotation_type\": \"point\",\r
+
+      \      \"annotation_x_coord\": 0,\r
+
+      \      \"annotation_y_coord\": 0,\r
+
+      \      \"status\": 1,\r
+
+      \      \"station_lot_annotations\": []\r
+
+      \    },\r
+
+      \    {\r
+
+      \      \"id\": 15,\r
+
+      \      \"station_sector_id\": 8,\r
+
+      \      \"label\": \"108\",\r
+
+      \      \"lot_type_id\": 4,\r
+
+      \      \"x_coord\": 0.5,\r
+
+      \      \"y_coord\": 1.23,\r
+
+      \      \"annotation_type\": \"point\",\r
+
+      \      \"annotation_x_coord\": 0,\r
+
+      \      \"annotation_y_coord\": 0,\r
+
+      \      \"status\": 1,\r
+
+      \      \"station_lot_annotations\": []\r
+
+      \    },\r
+
+      \    {\r
+
+      \      \"id\": 16,\r
+
+      \      \"station_sector_id\": 8,\r
+
+      \      \"label\": \"109\",\r
+
+      \      \"lot_type_id\": 4,\r
+
+      \      \"x_coord\": 0.5,\r
+
+      \      \"y_coord\": 1.23,\r
+
+      \      \"annotation_type\": \"point\",\r
+
+      \      \"annotation_x_coord\": 0,\r
+
+      \      \"annotation_y_coord\": 0,\r
+
+      \      \"status\": 1,\r
+
+      \      \"station_lot_annotations\": []\r
+
+      \    },\r
+
+      \    {\r
+
+      \      \"id\": 17,\r
+
+      \      \"station_sector_id\": 8,\r
+
+      \      \"label\": \"110\",\r
+
+      \      \"lot_type_id\": 4,\r
+
+      \      \"x_coord\": 0.5,\r
+
+      \      \"y_coord\": 1.23,\r
+
+      \      \"annotation_type\": \"point\",\r
+
+      \      \"annotation_x_coord\": 0,\r
+
+      \      \"annotation_y_coord\": 0,\r
+
+      \      \"status\": 1,\r
+
+      \      \"station_lot_annotations\": []\r
+
+      \    },\r
+
+      \    {\r
+
+      \      \"id\": 18,\r
+
+      \      \"station_sector_id\": 8,\r
+
+      \      \"label\": \"111\",\r
+
+      \      \"lot_type_id\": 4,\r
+
+      \      \"x_coord\": 0.5,\r
+
+      \      \"y_coord\": 1.23,\r
+
+      \      \"annotation_type\": \"point\",\r
+
+      \      \"annotation_x_coord\": 0,\r
+
+      \      \"annotation_y_coord\": 0,\r
+
+      \      \"status\": 1,\r
+
+      \      \"station_lot_annotations\": []\r
+
+      \    },\r
+
+      \    {\r
+
+      \      \"id\": 19,\r
+
+      \      \"station_sector_id\": 8,\r
+
+      \      \"label\": \"112\",\r
+
+      \      \"lot_type_id\": 4,\r
+
+      \      \"x_coord\": 0.5,\r
+
+      \      \"y_coord\": 1.23,\r
+
+      \      \"annotation_type\": \"point\",\r
+
+      \      \"annotation_x_coord\": 0,\r
+
+      \      \"annotation_y_coord\": 0,\r
+
+      \      \"status\": 1,\r
+
+      \      \"station_lot_annotations\": []\r
+
+      \    },\r
+
+      \    {\r
+
+      \      \"id\": 20,\r
+
+      \      \"station_sector_id\": 8,\r
+
+      \      \"label\": \"113\",\r
+
+      \      \"lot_type_id\": 4,\r
+
+      \      \"x_coord\": 0.5,\r
+
+      \      \"y_coord\": 1.23,\r
+
+      \      \"annotation_type\": \"point\",\r
+
+      \      \"annotation_x_coord\": 0,\r
+
+      \      \"annotation_y_coord\": 0,\r
+
+      \      \"status\": 1,\r
+
+      \      \"station_lot_annotations\": []\r
+
+      \    },\r
+
+      \    {\r
+
+      \      \"id\": 21,\r
+
+      \      \"station_sector_id\": 8,\r
+
+      \      \"label\": \"114\",\r
+
+      \      \"lot_type_id\": 4,\r
+
+      \      \"x_coord\": 0.5,\r
+
+      \      \"y_coord\": 1.23,\r
+
+      \      \"annotation_type\": \"point\",\r
+
+      \      \"annotation_x_coord\": 0,\r
+
+      \      \"annotation_y_coord\": 0,\r
+
+      \      \"status\": 1,\r
+
+      \      \"station_lot_annotations\": []\r
+
+      \    },\r
+
+      \    {\r
+
+      \      \"id\": 22,\r
+
+      \      \"station_sector_id\": 8,\r
+
+      \      \"label\": \"115\",\r
+
+      \      \"lot_type_id\": 4,\r
+
+      \      \"x_coord\": 0.5,\r
+
+      \      \"y_coord\": 1.23,\r
+
+      \      \"annotation_type\": \"point\",\r
+
+      \      \"annotation_x_coord\": 0,\r
+
+      \      \"annotation_y_coord\": 0,\r
+
+      \      \"status\": 1,\r
+
+      \      \"station_lot_annotations\": []\r
+
+      \    },\r
+
+      \    {\r
+
+      \      \"id\": 23,\r
+
+      \      \"station_sector_id\": 8,\r
+
+      \      \"label\": \"116\",\r
+
+      \      \"lot_type_id\": 4,\r
+
+      \      \"x_coord\": 0.5,\r
+
+      \      \"y_coord\": 1.23,\r
+
+      \      \"annotation_type\": \"point\",\r
+
+      \      \"annotation_x_coord\": 0,\r
+
+      \      \"annotation_y_coord\": 0,\r
+
+      \      \"status\": 1,\r
+
+      \      \"station_lot_annotations\": []\r
+
+      \    },\r
+
+      \    {\r
+
+      \      \"id\": 24,\r
+
+      \      \"station_sector_id\": 8,\r
+
+      \      \"label\": \"117\",\r
+
+      \      \"lot_type_id\": 4,\r
+
+      \      \"x_coord\": 0.5,\r
+
+      \      \"y_coord\": 1.23,\r
+
+      \      \"annotation_type\": \"point\",\r
+
+      \      \"annotation_x_coord\": 0,\r
+
+      \      \"annotation_y_coord\": 0,\r
+
+      \      \"status\": 1,\r
+
+      \      \"station_lot_annotations\": []\r
+
+      \    },\r
+
+      \    {\r
+
+      \      \"id\": 25,\r
+
+      \      \"station_sector_id\": 8,\r
+
+      \      \"label\": \"118\",\r
+
+      \      \"lot_type_id\": 4,\r
+
+      \      \"x_coord\": 0.5,\r
+
+      \      \"y_coord\": 1.23,\r
+
+      \      \"annotation_type\": \"point\",\r
+
+      \      \"annotation_x_coord\": 0,\r
+
+      \      \"annotation_y_coord\": 0,\r
+
+      \      \"status\": 1,\r
+
+      \      \"station_lot_annotations\": []\r
+
+      \    },\r
+
+      \    {\r
+
+      \      \"id\": 26,\r
+
+      \      \"station_sector_id\": 8,\r
+
+      \      \"label\": \"119\",\r
+
+      \      \"lot_type_id\": 4,\r
+
+      \      \"x_coord\": 0.5,\r
+
+      \      \"y_coord\": 1.23,\r
+
+      \      \"annotation_type\": \"point\",\r
+
+      \      \"annotation_x_coord\": 0,\r
+
+      \      \"annotation_y_coord\": 0,\r
+
+      \      \"status\": 1,\r
+
+      \      \"station_lot_annotations\": []\r
+
+      \    },\r
+
+      \    {\r
+
+      \      \"id\": 27,\r
+
+      \      \"station_sector_id\": 8,\r
+
+      \      \"label\": \"120\",\r
+
+      \      \"lot_type_id\": 4,\r
+
+      \      \"x_coord\": 0.5,\r
+
+      \      \"y_coord\": 1.23,\r
+
+      \      \"annotation_type\": \"point\",\r
+
+      \      \"annotation_x_coord\": 0,\r
+
+      \      \"annotation_y_coord\": 0,\r
+
+      \      \"status\": 1,\r
+
+      \      \"station_lot_annotations\": []\r
+
+      \    }\r
+
+      \  ]\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

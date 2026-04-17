@@ -1,0 +1,19 @@
+info:
+  name: Resend
+  type: http
+  seq: 8
+
+http:
+  method: POST
+  url: "{{protocol}}://{{hostname}}:{{notification_port}}/api/notification/notice/:id/resend"
+  params:
+    - name: id
+      value: "14001"
+      type: path
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

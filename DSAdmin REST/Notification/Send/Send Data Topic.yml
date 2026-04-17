@@ -1,0 +1,34 @@
+info:
+  name: Send Data Topic
+  type: http
+  seq: 6
+
+http:
+  method: POST
+  url: "{{protocol}}://{{hostname}}:{{notification_port}}/api/notification/data/topic"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"topic\": \"hello\",\r
+
+      \    \"shared_key\": \"oHWgzqWsFggeQ78pBC3BAY6VIGTkbjMR\",\r
+
+      \    \"data\": {\r
+
+      \        \"hello\": \"world\",\r
+
+      \        \"test\": \"value\",\r
+
+      \        \"haci\": \"pupu\"\r
+
+      \    }\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

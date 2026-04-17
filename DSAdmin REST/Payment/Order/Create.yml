@@ -1,0 +1,70 @@
+info:
+  name: Create
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{protocol}}://{{hostname}}:{{payment_port}}/api/payment/order"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"order\": {\r
+
+      \        \"user_id\": 22,\r
+
+      \        \"origin\": \"postman\",\r
+
+      \        \"discount_type\": 1,\r
+
+      \        \"discount_amount\": 500,\r
+
+      \        \"notes\": \"test notes\",\r
+
+      \        \"currency\": \"SGD\",\r
+
+      \        \"total\": 3000,\r
+
+      \        \"subtotal\": 2500,\r
+
+      \        \"status\": 1,\r
+
+      \        \"order_items\": [\r
+
+      \            {\r
+
+      \                \"item_name\": \"item1\",\r
+
+      \                \"quantity\": 2,\r
+
+      \                \"price\": 100,\r
+
+      \                \"total\": 200\r
+
+      \            },\r
+
+      \            {\r
+
+      \                \"item_name\": \"item2\",\r
+
+      \                \"quantity\": 4,\r
+
+      \                \"price\": 700,\r
+
+      \                \"total\": 2800\r
+
+      \            }\r
+
+      \        ]\r
+
+      \    }\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

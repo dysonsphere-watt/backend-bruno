@@ -1,0 +1,25 @@
+info:
+  name: Get Reviews
+  type: http
+  seq: 12
+
+http:
+  method: GET
+  url: "{{protocol}}://{{hostname}}:{{service_port}}/api/station/:id/reviews?min_rating=0&max_rating=4"
+  params:
+    - name: min_rating
+      value: "0"
+      type: query
+    - name: max_rating
+      value: "4"
+      type: query
+    - name: id
+      value: "5000"
+      type: path
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

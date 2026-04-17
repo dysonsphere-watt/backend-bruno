@@ -1,0 +1,25 @@
+info:
+  name: Admin Update
+  type: http
+  seq: 2
+
+http:
+  method: PATCH
+  url: "{{protocol}}://{{hostname}}:{{user_port}}/api/user/:id"
+  params:
+    - name: id
+      value: "123456"
+      type: path
+  body:
+    type: multipart-form
+    data:
+      - name: dashboard_2fa
+        type: text
+        value: "true"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,89 @@
+info:
+  name: Create
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{protocol}}://{{hostname}}:{{ticketmaster_port}}/api/ticketmaster/ticket"
+  body:
+    type: multipart-form
+    data:
+      - name: ticket
+        type: text
+        value: |-
+          {
+            "advertisement": {
+              "design_description": "hihi",
+              "end_at": {
+                "seconds": 1767171600
+              },
+              "start_at": {
+                "seconds": 1765789200
+              },
+              "use_design_service": true,
+              "name": "name_here",
+              "user_id": 123,
+              "days": ["monday", "tuesday", "wednesday"],
+              "time_ranges": ["08:00:00-11:59:59"],
+              "station_infos": [
+                {
+                  "station_id": 7005,
+                  "slot_count": 1,
+                  "robot_count": 200
+                }
+              ]
+            },
+            "company_id": 3,
+            "created_by": 51,
+            "description": "jhasbdfhbsd",
+            "fulfill_by": {
+              "seconds": 1759903940
+            },
+            "notes": "sakdjbfkdks",
+            "status": 10,
+            "title": "jlhsdbvblfdbsv",
+            "type": 2
+          }
+        disabled: true
+      - name: ticket
+        type: text
+        value: |-
+          {
+            "company_id": 3,
+            "created_by": 51,
+            "description": "jhasbdfhbsd",
+            "fulfill_by": {
+              "seconds": 1969903940
+            },
+            "parent_ticket_id": 0,
+            "notes": "sakdjbfkdks",
+            "status": 10,
+            "title": "jlhsdbvblfdbsv",
+            "assigned_user_ids": [],
+            "type": 1,
+            "station": {
+              "id": 700500,
+              "address": "address_here",
+              "address_id": 0,
+              "company_id": 3,
+              "contract_end_at": {
+                "seconds": 1972037093
+              },
+              "contract_start_at": {
+                "seconds": 1965251021
+              },
+              "latitude": 1,
+              "longitude": 100,
+              "name": "station_name_new",
+              "number_of_robots": 5,
+              "zip": "zipppy"
+            }
+          }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,29 @@
+info:
+  name: HitPay Refund
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: https://api.sandbox.hit-pay.com/v1/refund
+  headers:
+    - name: X-BUSINESS-API-KEY
+      value: 3b28ab9b5d0143f31d5409270433e459a11f94803dcd549ba2a87329512e6560
+  body:
+    type: json
+    data: "{\r
+
+      \    \"payment_id\": \"9ec037d7-6c01-422c-b63c-ad264206f498\",\r
+
+      \    \"amount\": \"1\",\r
+
+      \    \"webhook\": \"https://webhook.site/82b66844-2820-4b82-87de-512190b17634\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

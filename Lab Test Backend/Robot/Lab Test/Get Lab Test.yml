@@ -1,0 +1,22 @@
+info:
+  name: Get Lab Test
+  type: http
+  seq: 5
+
+http:
+  method: GET
+  url: "{{protocol}}://{{hostname}}:{{port}}/api/v1/robot/:vid/test/:lab-test_id"
+  params:
+    - name: vid
+      value: ds0001
+      type: path
+    - name: lab-test_id
+      value: "1"
+      type: path
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,58 @@
+info:
+  name: Login
+  type: http
+  seq: 5
+
+http:
+  method: POST
+  url: "{{protocol}}://{{hostname}}:{{user_port}}/api/user/login"
+  body:
+    type: json
+    data: |-
+      // Admin user
+      {
+        "username": "+6592473996",
+        "password": "Password@1234",
+        "login_type": 2
+      }
+
+      // Guest user
+      // {
+      //     "username": "ptLQZQUR8vd40P5N",
+      //     "password": "ptLQZQUR8vd40P5N",
+      //     "login_type": 1
+      // }
+
+      // Regular user
+      // {
+      //     "username": "+6592473996",
+      //     "password": "Password@1234",
+      //     "login_type": 1,
+      //     "dashboard": false
+      // }
+
+      // Robot user
+      // {
+      //   "username": "ds7000",
+      //   "password": "6d745f044b67641666ba317ec407103c5eb8e65dd3a8cf3c80d284193953521f",
+      //   "login_type": 3
+      // }
+
+runtime:
+  scripts:
+    - type: after-response
+      code: |-
+        if (res.getStatus() == 200) {
+            const data = res.getBody()
+            if (data.token !== null && data.token !== undefined) {      
+                bru.setGlobalEnvVar("autho", data.token);
+                bru.setEnvVar("auth", data.token, {persist: true});
+                bru.setVar("auth_key", data.token);
+            }
+        }
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

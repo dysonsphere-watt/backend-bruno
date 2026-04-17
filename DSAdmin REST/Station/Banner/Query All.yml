@@ -1,0 +1,19 @@
+info:
+  name: Query All
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{protocol}}://{{hostname}}:{{station_port}}/api/station/:id/banner"
+  params:
+    - name: id
+      value: "7036"
+      type: path
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,41 @@
+info:
+  name: Register
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: "{{protocol}}://{{hostname}}:{{user_port}}/api/user/register"
+  body:
+    type: multipart-form
+    data:
+      - name: full_name
+        type: text
+        value: testadminno
+      - name: password
+        type: text
+        value: Password@123
+      - name: email
+        type: text
+        value: testadmin@mail.com
+      - name: phone
+        type: text
+        value: "+6599998879"
+      - name: gender
+        type: text
+        value: Male
+      - name: date_of_birth
+        type: text
+        value: 2005-12-04
+      - name: otp_input
+        type: text
+        value: "0000"
+      - name: receive_marketing
+        type: text
+        value: "true"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

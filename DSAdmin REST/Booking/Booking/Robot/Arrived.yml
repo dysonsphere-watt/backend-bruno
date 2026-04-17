@@ -1,0 +1,19 @@
+info:
+  name: Arrived
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{protocol}}://{{hostname}}:{{booking_port}}/api/booking/:id/arrived"
+  params:
+    - name: id
+      value: "2406"
+      type: path
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

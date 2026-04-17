@@ -1,0 +1,26 @@
+info:
+  name: Send
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{protocol}}://{{hostname}}:{{user_port}}/api/user/otp/:method/send"
+  params:
+    - name: method
+      value: sms
+      type: path
+  body:
+    type: json
+    data: |-
+      {
+      //   "identifier": "benjamin.goh@dysonsphere.com.sg"
+        "identifier": "+6580802842"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

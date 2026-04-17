@@ -1,0 +1,30 @@
+info:
+  name: Update
+  type: http
+  seq: 5
+
+http:
+  method: PUT
+  url: http://{{hostname}}:{{user_port}}/api/user/role/2
+  body:
+    type: json
+    data: "{\r
+
+      \  \"name\": \"Admin\",\r
+
+      \  \"description\": \"Watt Administrator\",\r
+
+      \  \"permission_ids\": [\r
+
+      \    17\r
+
+      \  ]\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

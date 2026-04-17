@@ -1,0 +1,18 @@
+info:
+  name: Status Code
+  type: http
+  seq: 6
+
+http:
+  method: POST
+  url: "{{protocol}}://{{hostname}}:{{setting_port}}/api/setting/status-code"
+  body:
+    type: json
+    data: "{\r\n    \"status_code\": 200\r\n}"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

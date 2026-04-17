@@ -1,0 +1,27 @@
+info:
+  name: HitPay Charge Saved Card
+  type: http
+  seq: 6
+
+http:
+  method: POST
+  url: https://api.sandbox.hit-pay.com/v1/charge/recurring-billing/9c527b23-6b42-4315-8850-80fd9b469299
+  headers:
+    - name: X-BUSINESS-API-KEY
+      value: 3b28ab9b5d0143f31d5409270433e459a11f94803dcd549ba2a87329512e6560
+  body:
+    type: json
+    data: "{\r
+
+      \    \"amount\": 350.50,\r
+
+      \    \"currency\": \"SGD\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,24 @@
+info:
+  name: Create
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: http://{{hostname}}:{{user_port}}/api/user/coupon/create
+  body:
+    type: json
+    data: "{\r
+
+      \    \"user_id\": 12,\r
+
+      \    \"status\": 2\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

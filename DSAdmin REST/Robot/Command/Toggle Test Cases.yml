@@ -1,0 +1,30 @@
+info:
+  name: Toggle Test Cases
+  type: http
+  seq: 5
+
+http:
+  method: POST
+  url: "{{protocol}}://{{hostname}}:{{user_port}}/api/robot/:id/test-cases"
+  params:
+    - name: id
+      value: "1"
+      type: path
+  body:
+    type: json
+    data: "{\r
+
+      \    \"ev_charging\": true,\r
+
+      \    \"robot_charging\": false,\r
+
+      \    \"robot_moving\": false\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

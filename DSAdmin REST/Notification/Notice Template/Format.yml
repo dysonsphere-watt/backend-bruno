@@ -1,0 +1,28 @@
+info:
+  name: Format
+  type: http
+  seq: 6
+
+http:
+  method: POST
+  url: "{{protocol}}://{{hostname}}:{{notification_port}}/api/notification/template/3/format"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"variables\": {\r
+
+      \        \"couponCode\": \"ABC123\",\r
+
+      \        \"expiringDays\": \"5\"\r
+
+      \    }\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

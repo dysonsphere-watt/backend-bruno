@@ -1,0 +1,24 @@
+info:
+  name: Initiate PayNow
+  type: http
+  seq: 8
+
+http:
+  method: POST
+  url: "{{protocol}}://{{hostname}}:{{payment_port}}/api/payment/paynow"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"shared_key\": \"LgFNFmwOQWh0paJInqvSbIl9DiqEdw82\",\r
+
+      \    \"order_id\": 285\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

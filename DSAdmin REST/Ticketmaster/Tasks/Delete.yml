@@ -1,0 +1,22 @@
+info:
+  name: Delete
+  type: http
+  seq: 5
+
+http:
+  method: DELETE
+  url: "{{protocol}}://{{hostname}}:{{ticketmaster_port}}/api/ticketmaster/ticket/:ticket-id/task/:task-id"
+  params:
+    - name: ticket-id
+      value: "17"
+      type: path
+    - name: task-id
+      value: "1"
+      type: path
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

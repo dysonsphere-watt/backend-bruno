@@ -1,0 +1,32 @@
+info:
+  name: Set
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{protocol}}://{{hostname}}:{{robot_port}}/api/robot/:id/ad-display"
+  params:
+    - name: id
+      value: "7000"
+      type: path
+  body:
+    type: json
+    data: "{\r
+
+      \    \"displays\": [\r
+
+      \        { \"identifier\": \"ad_left_0001\", \"robot_component_id\": 6 },\r
+
+      \        { \"identifier\": \"ad_left_0002\", \"robot_component_id\": 7 }\r
+
+      \    ]\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

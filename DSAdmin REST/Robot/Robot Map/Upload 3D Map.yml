@@ -1,0 +1,22 @@
+info:
+  name: Upload 3D Map
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{protocol}}://{{hostname}}:{{robot_port}}/api/robot/map"
+  body:
+    type: multipart-form
+    data:
+      - name: map_file
+        type: file
+        value: []
+        disabled: true
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

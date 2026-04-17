@@ -1,0 +1,28 @@
+info:
+  name: Update
+  type: http
+  seq: 2
+
+http:
+  method: PUT
+  url: http://{{hostname}}:8003/api/user/coupon/update
+  body:
+    type: json
+    data: "{\r
+
+      \    \"id\": 1,\r
+
+      \    \"user_id\": 9,\r
+
+      \    \"coupon_id\": 1,\r
+
+      \    \"status\": 3\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,15 @@
+info:
+  name: Trigger Check Outstanding Approvals
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{protocol}}://{{hostname}}:{{notification_port}}/api/ticketmaster/debug/outstanding-approval"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

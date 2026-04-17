@@ -1,0 +1,36 @@
+info:
+  name: Create
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{protocol}}://{{hostname}}:{{setting_port}}/api/setting/car"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"car\": {\r
+
+      \        \"car_type\": \"Sedan\",\r
+
+      \        \"year\": 2020,\r
+
+      \        \"maker\": \"Tesla\",\r
+
+      \        \"model\": \"Model S\",\r
+
+      \        \"hybrid\": true,\r
+
+      \        \"charging_mode\": \"Supercharger\"\r
+
+      \    }\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

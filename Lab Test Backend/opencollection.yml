@@ -1,0 +1,35 @@
+opencollection: 1.0.0
+
+info:
+  name: Lab Test Backend
+config:
+  proxy:
+    inherit: true
+    config:
+      protocol: http
+      hostname: ""
+      port: ""
+      auth:
+        username: ""
+        password: ""
+      bypassProxy: ""
+
+request:
+  auth:
+    type: bearer
+    token: "{{auth}}"
+  variables:
+    - name: protocol
+      value: http
+    - name: hostname
+      value: lab-test-backend.jollycoast-bf519b94.southeastasia.azurecontainerapps.io
+    - name: port
+      value: "80"
+    - name: auth
+      value: ""
+    - name: hostname_bak
+      value: ""
+    - name: port_bak
+      value: ""
+bundled: false
+extensions: {}

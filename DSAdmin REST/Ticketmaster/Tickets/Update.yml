@@ -1,0 +1,97 @@
+info:
+  name: Update
+  type: http
+  seq: 4
+
+http:
+  method: PUT
+  url: "{{protocol}}://{{hostname}}:{{ticketmaster_port}}/api/ticketmaster/ticket/:ticket-id"
+  params:
+    - name: ticket-id
+      value: "140"
+      type: path
+  body:
+    type: json
+    data: |-
+      // {
+      //   "ticket": {
+      //     "status": 4,
+      // //     "termination_reason": "lol",
+      //     "fulfill_by": {
+      //       "seconds": 1969903940
+      //     }
+      //   }
+      // }
+
+      // {
+      //     "ticket": {
+      //         "title": "asdftitlei",
+      //         "description": "Ensure all ads are set up",
+      //         "fulfill_by": {
+      //             "seconds": 1859903940
+      //         },
+      //         "type": 1,
+      //         "status": 42,
+      //         "station": {
+      //             "company_id": 3,
+      //             "name": "hihistationnew",
+      //             "contract_end_at": {
+      //               "seconds": 1772037093
+      //             },
+      //             "number_of_robots": 12
+      //         },
+      //         "advertisement": {
+      //             "design_description": "hihi",
+      //             "end_at": {
+      //             "seconds": 1887171600
+      //             },
+      //             "start_at": {
+      //             "seconds": 1665789200
+      //             },
+      //             "use_design_service": true,
+      //             "name": "name_here",
+      //             "user_id": 123,
+      //             "station_infos": [
+      //                 {
+      //                     "station_id": 7005,
+      //                     "station_name": "Apple Carpark",
+      //                     "slot_count": 1,
+      //                     "robot_count": 200
+      //                 }
+      //             ],
+      //             "days": ["monday", "tuesday", "wednesday"],
+      //             "time_ranges": ["08:00:00-11:59:59"]
+      //         }
+      //     }
+      // }
+
+      {
+        "ticket": {
+          "status": 4,
+          "fulfill_by": {
+            "seconds": 1971856772,
+            "nanos": 203105400
+          },
+          "type": 3,
+          "title": "Deploy robots to station \"HZ Carpark\"",
+          "description": "Gotta deploy the bots",
+          "draft_fields": {},
+          "robot_deployment": {
+            "additional_robots_required": 0,
+            "created_by_type": 2,
+            "reassigned_robot_sectors": [
+              { "station_sector_id": 36, "vid": "" }
+            ],
+            "robots_required": 1,
+            "station_id": 7065,
+            "station_name": "HZ Carpark"
+          }
+        }
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,58 @@
+info:
+  name: Update
+  type: http
+  seq: 4
+
+http:
+  method: PUT
+  url: "{{protocol}}://{{hostname}}:{{payment_port}}/api/payment/order/150"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"order\": {\r
+
+      \        \"user_id\": 22,\r
+
+      \        \"origin\": \"postman\",\r
+
+      \        \"discount_type\": 1,\r
+
+      \        \"discount_amount\": 100,\r
+
+      \        \"notes\": \"test notes\",\r
+
+      \        \"currency\": \"SGD\",\r
+
+      \        \"total\": 100,\r
+
+      \        \"subtotal\": 200,\r
+
+      \        \"status\": 1,\r
+
+      \        \"order_items\": [\r
+
+      \            {\r
+
+      \                \"item_name\": \"item1\",\r
+
+      \                \"quantity\": 2,\r
+
+      \                \"price\": 100,\r
+
+      \                \"total\": 200\r
+
+      \            }\r
+
+      \        ]\r
+
+      \    }\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,34 @@
+info:
+  name: Mock Refund Webhook
+  type: http
+  seq: 4
+
+http:
+  method: POST
+  url: "{{protocol}}://{{hostname}}:{{payment_port}}/api/payment/hook/refund"
+  body:
+    type: form-urlencoded
+    data:
+      - name: payment_id
+        value: 9ccebd5e-8a85-4beb-adf1-88759bb433e5
+      - name: refund_id
+        value: 9ccec1c5-cc25-4deb-aa68-2086a46b59dd
+      - name: original_amount
+        value: "3.3"
+      - name: balance
+        value: "0.3"
+      - name: amount
+        value: "3"
+      - name: currency
+        value: sgd
+      - name: status
+        value: refunded
+      - name: hmac
+        value: 52217d97c895836776cae1b371d48aa5647a688ddd8f46c1b632afe0e3c29eef
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,29 @@
+info:
+  name: HitPay Update User Card
+  type: http
+  seq: 7
+
+http:
+  method: PUT
+  url: https://api.sandbox.hit-pay.com/v1/recurring-billing/:recurring-billing-id
+  headers:
+    - name: X-BUSINESS-API-KEY
+      value: 3b28ab9b5d0143f31d5409270433e459a11f94803dcd549ba2a87329512e6560
+  params:
+    - name: recurring-billing-id
+      value: 9c52ab17-2815-4308-8f8d-28753b38d642
+      type: path
+  body:
+    type: json
+    data: "{\r
+
+      \    \"webhook\": \"https://watt-rev-proxy.blackstone-aa019cfd.southeastasia.azurecontainerapps.io/api/payment/hook/card-charge\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

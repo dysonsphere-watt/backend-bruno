@@ -1,0 +1,26 @@
+info:
+  name: Delete
+  type: http
+  seq: 2
+
+http:
+  method: DELETE
+  url: http://{{hostname}}:8002/api/setting/giftcard/delete
+  body:
+    type: json
+    data: "{\r
+
+      \  \"id\": 1,\r
+
+      \  \"giftcard\": \"GiftCard123\",\r
+
+      \  \"code\": \"ABCD123\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

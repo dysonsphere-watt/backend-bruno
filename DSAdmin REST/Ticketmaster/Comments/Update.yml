@@ -1,0 +1,36 @@
+info:
+  name: Update
+  type: http
+  seq: 3
+
+http:
+  method: PUT
+  url: "{{protocol}}://{{hostname}}:{{ticketmaster_port}}/api/ticketmaster/comment/:parent-type/:parent-id/:comment-id"
+  params:
+    - name: parent-type
+      value: "1"
+      type: path
+    - name: parent-id
+      value: "10013"
+      type: path
+    - name: comment-id
+      value: "6"
+      type: path
+  body:
+    type: json
+    data: "{\r
+
+      \    \"comment\": {\r
+
+      \        \"body\": \"hello new world\"\r
+
+      \    }\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

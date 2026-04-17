@@ -1,0 +1,15 @@
+info:
+  name: Get Amenities
+  type: http
+  seq: 8
+
+http:
+  method: GET
+  url: "{{protocol}}://{{hostname}}:{{station_port}}/api/station/21/amenities"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

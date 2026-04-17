@@ -1,0 +1,26 @@
+info:
+  name: Check
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{protocol}}://{{hostname}}:{{user_port}}/api/user/otp/:method/check"
+  params:
+    - name: method
+      value: sms
+      type: path
+  body:
+    type: json
+    data: |-
+      {
+        "identifier": "+6580802842",
+        "otp_input": "1338"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

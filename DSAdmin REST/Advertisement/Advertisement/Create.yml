@@ -1,0 +1,40 @@
+info:
+  name: Create
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{protocol}}://{{hostname}}:{{advertisement_port}}/api/advertisement"
+  body:
+    type: json
+    data: |-
+      {
+          "user_id": 22,
+          "title": "new ad!!",
+          "description": "",
+          "date_from": "2026-06-06",
+          "date_to": "2026-12-01",
+          "days": ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"],
+          "time_ranges": [
+              { "time_from": "08:00:00", "time_to": "11:59:59" },
+              { "time_from": "12:00:00", "time_to": "15:59:59" },
+              { "time_from": "16:00:00", "time_to": "19:59:59" }
+          ],
+          "station_infos": [
+              { "station_id": 7000, "reserved_slot_count": 10, "reserved_robot_count": 3 }
+          ],
+          "coupon_code": "",
+          "payment_info": {
+              "payment_method": 0,
+              "user_card_id": 10,
+              "last_four": "4444"
+          }
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,23 @@
+info:
+  name: Update
+  type: http
+  seq: 5
+
+http:
+  method: PUT
+  url: "{{protocol}}://{{hostname}}:{{robot_port}}/api/robot/10"
+  body:
+    type: json
+    data: |-
+      {
+          "robot": {
+              "station_id": 7005
+          }
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

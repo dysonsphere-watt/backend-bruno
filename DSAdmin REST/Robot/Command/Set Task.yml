@@ -1,0 +1,32 @@
+info:
+  name: Set Task
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{protocol}}://{{hostname}}:{{robot_port}}/api/robot/:serial-no/set-task"
+  params:
+    - name: serial-no
+      value: ds7000
+      type: path
+  body:
+    type: json
+    data: "{\r
+
+      \    \"shared_key\": \"EiGuA89PB31xzYPYikq9O8TNXdjt5tC3\",\r
+
+      \    \"task_plan\": \"PL2\",\r
+
+      \    \"task_command\": 0,\r
+
+      \    \"target_pos_id\": \"P15\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

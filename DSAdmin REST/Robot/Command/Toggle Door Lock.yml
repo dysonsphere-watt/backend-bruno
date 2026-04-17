@@ -1,0 +1,28 @@
+info:
+  name: Toggle Door Lock
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: "{{protocol}}://{{hostname}}:{{user_port}}/api/robot/:id/door-lock"
+  params:
+    - name: id
+      value: "7000"
+      type: path
+  body:
+    type: json
+    data: "{\r
+
+      \    \"door_left\": true,\r
+
+      \    \"door_right\": true\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

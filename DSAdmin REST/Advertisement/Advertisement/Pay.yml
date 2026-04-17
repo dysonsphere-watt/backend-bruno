@@ -1,0 +1,34 @@
+info:
+  name: Pay
+  type: http
+  seq: 6
+
+http:
+  method: POST
+  url: "{{protocol}}://{{hostname}}:{{advertisement_port}}/api/advertisement/:id/pay"
+  params:
+    - name: id
+      value: "29"
+      type: path
+  body:
+    type: json
+    data: "{\r
+
+      \    \"payment_info\": {\r
+
+      \        \"payment_method\": 1,\r
+
+      \        \"user_card_id\": 10,\r
+
+      \        \"last_four\": \"4444\"\r
+
+      \    }\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

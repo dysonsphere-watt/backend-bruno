@@ -1,0 +1,33 @@
+info:
+  name: Check Lot
+  type: http
+  seq: 5
+
+http:
+  method: POST
+  url: "{{protocol}}://{{hostname}}:{{station_port}}/api/station/:id/sector/:s-id/check-lot"
+  params:
+    - name: id
+      value: "7065"
+      type: path
+    - name: s-id
+      value: "7"
+      type: path
+  body:
+    type: json
+    data: "{\r
+
+      \    \"station_lot_num\": \"102\",\r
+
+      \    \"check_timestamp\": \"2025-03-19T14:30:00+08:00\",\r
+
+      \    \"duration\": 60\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

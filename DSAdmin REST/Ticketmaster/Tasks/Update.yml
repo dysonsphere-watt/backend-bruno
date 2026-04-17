@@ -1,0 +1,33 @@
+info:
+  name: Update
+  type: http
+  seq: 4
+
+http:
+  method: PUT
+  url: "{{protocol}}://{{hostname}}:{{ticketmaster_port}}/api/ticketmaster/ticket/:ticket-id/task/:task-id"
+  params:
+    - name: ticket-id
+      value: "140024"
+      type: path
+    - name: task-id
+      value: "100020"
+      type: path
+  body:
+    type: json
+    data: "{\r
+
+      \    \"task\": {\r
+
+      \        \"status\": 5\r
+
+      \    }\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,15 @@
+info:
+  name: Stop Charge
+  type: http
+  seq: 4
+
+http:
+  method: POST
+  url: http://{{hostname}}:{{station_port}}/api/booking/395/charge/stop
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

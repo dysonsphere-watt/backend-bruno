@@ -1,0 +1,22 @@
+info:
+  name: Republish
+  type: http
+  seq: 4
+
+http:
+  method: POST
+  url: "{{protocol}}://{{hostname}}:{{user_port}}/api/robot/map/republish"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"station_sector_ids\": [7]\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

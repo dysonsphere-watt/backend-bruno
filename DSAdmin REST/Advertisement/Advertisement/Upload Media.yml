@@ -1,0 +1,29 @@
+info:
+  name: Upload Media
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{protocol}}://{{hostname}}:{{advertisement_port}}/api/advertisement/:id/media"
+  params:
+    - name: id
+      value: "94"
+      type: path
+  body:
+    type: multipart-form
+    data:
+      - name: ad_file
+        type: file
+        value:
+          - /C:/Users/dyson/Desktop/cat.png
+      - name: md5_hash
+        type: text
+        value: ceff9ec97eaa4ac47c963c9244affe64
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

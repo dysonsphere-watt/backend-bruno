@@ -1,0 +1,22 @@
+info:
+  name: Email
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{endpoint}}/emails:send?api-version=2023-03-31"
+  params:
+    - name: api-version
+      value: 2023-03-31
+      type: query
+  body:
+    type: json
+    data: '{"senderAddress":"DoNotReply@95db5be4-1fca-417d-bf45-3a1373d173a9.azurecomm.net","recipients":{"bcc":[{"address":"benjamin.goh@dysonsphere.com.sg"},{"address":"benjamin.goh@dysonsphere.com.sg"}]},"content":{"subject":"your account needs verification","html":"lol"}}'
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

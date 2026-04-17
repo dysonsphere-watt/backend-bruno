@@ -1,0 +1,53 @@
+info:
+  name: Get All Stations Details
+  type: http
+  seq: 10
+
+http:
+  method: GET
+  url: "{{protocol}}://{{hostname}}:{{advertisement_port}}/api/advertisement/station?date_from=2025-11-01&date_to=2025-12-01&days[]=monday&days[]=tuesday&days[]=wednesday&days[]=thursday&days[]=friday&days[]=saturday&days[]=sunday&time_ranges[]=08:00:00-11:59:59&time_ranges[]=12:00:00-15:59:59"
+  params:
+    - name: date_from
+      value: 2025-11-01
+      type: query
+    - name: date_to
+      value: 2025-12-01
+      type: query
+    - name: days[]
+      value: monday
+      type: query
+    - name: days[]
+      value: tuesday
+      type: query
+    - name: days[]
+      value: wednesday
+      type: query
+    - name: days[]
+      value: thursday
+      type: query
+    - name: days[]
+      value: friday
+      type: query
+    - name: days[]
+      value: saturday
+      type: query
+    - name: days[]
+      value: sunday
+      type: query
+    - name: time_ranges[]
+      value: 08:00:00-11:59:59
+      type: query
+    - name: time_ranges[]
+      value: 12:00:00-15:59:59
+      type: query
+    - name: time_ranges[]
+      value: 16:00:00-19:59:59
+      type: query
+      disabled: true
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

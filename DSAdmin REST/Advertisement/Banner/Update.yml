@@ -1,0 +1,36 @@
+info:
+  name: Update
+  type: http
+  seq: 2
+
+http:
+  method: PUT
+  url: "{{protocol}}://{{hostname}}:{{station_port}}/api/advertisement/banner/:id"
+  params:
+    - name: id
+      value: "4"
+      type: path
+  body:
+    type: multipart-form
+    data:
+      - name: banner_file
+        type: file
+        value:
+          - /C:/Users/dyson/Desktop/ad4.mp4
+      - name: name
+        type: text
+        value: hihi
+      - name: station_sector_ids
+        type: text
+        value: "7"
+        disabled: true
+      - name: station_sector_ids
+        type: text
+        value: "4"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

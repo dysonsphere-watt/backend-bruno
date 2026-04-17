@@ -1,0 +1,18 @@
+info:
+  name: Set Amenities
+  type: http
+  seq: 7
+
+http:
+  method: PUT
+  url: "{{protocol}}://{{hostname}}:{{station_port}}/api/station/21/amenities"
+  body:
+    type: json
+    data: "{\r\n    \"amenity_ids\": [1,2]\r\n}"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

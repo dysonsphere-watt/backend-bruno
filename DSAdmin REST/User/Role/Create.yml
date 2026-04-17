@@ -1,0 +1,26 @@
+info:
+  name: Create
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: http://{{hostname}}:{{user_port}}/api/user/role
+  body:
+    type: json
+    data: "{\r
+
+      \  \"name\": \"{{$randomJobTitle}}\",\r
+
+      \  \"description\": \"{{$randomAbbreviation}}\",\r
+
+      \  \"permission_ids\": [9,10,13]\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

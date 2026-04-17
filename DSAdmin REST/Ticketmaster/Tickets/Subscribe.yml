@@ -1,0 +1,22 @@
+info:
+  name: Subscribe
+  type: http
+  seq: 6
+
+http:
+  method: POST
+  url: "{{protocol}}://{{hostname}}:{{ticketmaster_port}}/api/ticketmaster/ticket/:ticket-id/subscribe"
+  params:
+    - name: ticket-id
+      value: "17"
+      type: path
+  body:
+    type: json
+    data: "{\r\n    \"subscribe\": false\r\n}"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

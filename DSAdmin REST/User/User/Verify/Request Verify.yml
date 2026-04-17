@@ -1,0 +1,19 @@
+info:
+  name: Request Verify
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{protocol}}://{{hostname}}:{{user_port}}/api/user/:type/req-verify"
+  params:
+    - name: type
+      value: sms
+      type: path
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,44 @@
+info:
+  name: Create
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{protocol}}://{{hostname}}:{{setting_port}}/api/setting/company"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"company\": {\r
+
+      \        \"name\": \"{{$randomCompanyName}}\",\r
+
+      \        \"company_type\": \"Tech\",\r
+
+      \        \"company_catalog\": \"Software\",\r
+
+      \        \"district\": \"XYZ\",\r
+
+      \        \"email\": \"contact@abcinc.com\",\r
+
+      \        \"phone\": \"123-456-7890\",\r
+
+      \        \"contact_person\": \"John Doe\",\r
+
+      \        \"contact_phone\": \"987-654-3210\",\r
+
+      \        \"web_url\": \"www.abcinc.com\",\r
+
+      \        \"address_id\": 19\r
+
+      \    }\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

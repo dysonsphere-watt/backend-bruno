@@ -1,0 +1,22 @@
+info:
+  name: Start Lab Test
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{protocol}}://{{hostname}}:{{port}}/api/v1/robot/:vid/test/start"
+  params:
+    - name: vid
+      value: ds0001
+      type: path
+  body:
+    type: json
+    data: "{\r\n    \"lab_test_id\": 0\r\n}"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

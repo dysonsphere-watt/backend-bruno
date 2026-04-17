@@ -1,0 +1,24 @@
+info:
+  name: Update
+  type: http
+  seq: 6
+
+http:
+  method: PUT
+  url: "{{protocol}}://{{hostname}}:{{payment_port}}/api/payment/user-card/10"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"send_email\": true,\r
+
+      \    \"webhook\": \"https://watt-rev-proxy.blackstone-aa019cfd.southeastasia.azurecontainerapps.io/api/payment/hook/card-charge\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

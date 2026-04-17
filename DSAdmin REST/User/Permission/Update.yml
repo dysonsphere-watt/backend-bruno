@@ -1,0 +1,48 @@
+info:
+  name: Update
+  type: http
+  seq: 4
+
+http:
+  method: PUT
+  url: "{{protocol}}://{{hostname}}:{{user_port}}/api/user/permission/18"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"name\": \"All Booking Fuctions\",\r
+
+      \    \"type\": \"booking:all\",\r
+
+      \    \"resources\": [\r
+
+      \        { \"method\": \"GET\", \"route\": \"/api/booking\" },\r
+
+      \        { \"method\": \"PUT\", \"route\": \"/api/booking/*\" },\r
+
+      \        { \"method\": \"PATCH\", \"route\": \"/api/booking/*/cancel\" },\r
+
+      \        { \"method\": \"POST\", \"route\": \"/api/booking/*/extend\" },\r
+
+      \        { \"method\": \"POST\", \"route\": \"/api/booking/*/review\" },\r
+
+      \        { \"method\": \"DELETE\", \"route\": \"/api/booking/*\" },\r
+
+      \        { \"method\": \"GET\", \"route\": \"/api/booking/availability\" },\r
+
+      \        { \"method\": \"POST\", \"route\": \"/api/booking\" },\r
+
+      \        { \"method\": \"GET\", \"route\": \"/api/booking/*\" },\r
+
+      \        { \"method\": \"POST\", \"route\": \"/api/booking/*/pay\" }\r
+
+      \    ]\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

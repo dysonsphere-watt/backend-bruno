@@ -1,0 +1,15 @@
+info:
+  name: Set Default
+  type: http
+  seq: 4
+
+http:
+  method: PATCH
+  url: "{{protocol}}://{{hostname}}:{{payment_port}}/api/payment/user-card/36/set-default"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

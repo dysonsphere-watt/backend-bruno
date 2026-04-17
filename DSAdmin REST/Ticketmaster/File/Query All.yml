@@ -1,0 +1,35 @@
+info:
+  name: Query All
+  type: http
+  seq: 2
+
+http:
+  method: GET
+  url: "{{protocol}}://{{hostname}}:{{ticketmaster_port}}/api/ticketmaster/file/:parent-type/:parent-id"
+  params:
+    - name: parent-type
+      value: "3"
+      type: path
+    - name: parent-id
+      value: "10006"
+      type: path
+  body:
+    type: text
+    data: "{\r
+
+      \    \"comment\": {\r
+
+      \        \"body\": \"hello world\",\r
+
+      \        \"reply_to_id\": 4\r
+
+      \    }\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

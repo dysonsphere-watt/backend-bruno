@@ -1,0 +1,26 @@
+info:
+  name: Update
+  type: http
+  seq: 4
+
+http:
+  method: PUT
+  url: http://{{hostname}}:8002/api/setting/address/20020
+  body:
+    type: json
+    data: "{\r
+
+      \  \"address\": {\r
+
+      \    \"title\": \"newtitle\"\r
+
+      \  }\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
