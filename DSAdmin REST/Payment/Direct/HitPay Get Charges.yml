@@ -8,7 +8,7 @@ http:
   url: https://api.sandbox.hit-pay.com/v1/charges/export
   headers:
     - name: X-BUSINESS-API-KEY
-      value: 3b28ab9b5d0143f31d5409270433e459a11f94803dcd549ba2a87329512e6560
+      value: "{{hitpay_api_key}}"
   body:
     type: json
     data: ""

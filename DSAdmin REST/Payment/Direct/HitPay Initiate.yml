@@ -8,7 +8,7 @@ http:
   url: https://api.sandbox.hit-pay.com/v1/payment-requests
   headers:
     - name: X-BUSINESS-API-KEY
-      value: 3b28ab9b5d0143f31d5409270433e459a11f94803dcd549ba2a87329512e6560
+      value: "{{hitpay_api_key}}"
   body:
     type: json
     data: |-
@@ -17,7 +17,7 @@ http:
         "currency": "sgd",
         "payment_methods": ["paynow_online"],
         "generate_qr": false,
-        "expiry_date": "2026-03-28 14:37:11"
+        "expiry_date": "2026-04-17 18:37:11"
       }
   auth: inherit
 

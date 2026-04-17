@@ -1,4 +1,6 @@
 name: backend-env
 variables:
-  - name: auth
-    value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyMiwicm9sZV9pZCI6MiwiaXNzIjoiV2F0dC1HZW5lcmljIiwiZXhwIjoxNzc3NjE0MTkzLCJpYXQiOjE3NzY0MDQ1OTN9.n1FykfC5PnHUYRzmIh42IZ_5VieCJsdlVkfDBgkpklw
+  - secret: true
+    name: auth
+  - secret: true
+    name: hitpay_api_key
