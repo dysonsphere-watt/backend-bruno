@@ -5,7 +5,7 @@ info:
 
 http:
   method: PUT
-  url: http://{{hostname}}:{{booking_port}}/api/booking/399
+  url: "{{protocol}}://{{hostname}}:{{booking_port}}/api/booking/399"
   body:
     type: json
     data: "{\r

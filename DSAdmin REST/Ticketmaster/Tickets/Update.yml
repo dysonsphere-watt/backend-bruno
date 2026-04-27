@@ -8,20 +8,21 @@ http:
   url: "{{protocol}}://{{hostname}}:{{ticketmaster_port}}/api/ticketmaster/ticket/:ticket-id"
   params:
     - name: ticket-id
-      value: "140"
+      value: "5"
       type: path
   body:
     type: json
     data: |-
-      // {
-      //   "ticket": {
-      //     "status": 4,
-      // //     "termination_reason": "lol",
-      //     "fulfill_by": {
-      //       "seconds": 1969903940
-      //     }
-      //   }
-      // }
+      {
+        "ticket": {
+          "status": 81,
+          "type": 3,
+      //     "termination_reason": "lol",
+          "fulfill_by": {
+            "seconds": 1969903940
+          }
+        }
+      }
 
       // {
       //     "ticket": {
@@ -65,29 +66,29 @@ http:
       //     }
       // }
 
-      {
-        "ticket": {
-          "status": 4,
-          "fulfill_by": {
-            "seconds": 1971856772,
-            "nanos": 203105400
-          },
-          "type": 3,
-          "title": "Deploy robots to station \"HZ Carpark\"",
-          "description": "Gotta deploy the bots",
-          "draft_fields": {},
-          "robot_deployment": {
-            "additional_robots_required": 0,
-            "created_by_type": 2,
-            "reassigned_robot_sectors": [
-              { "station_sector_id": 36, "vid": "" }
-            ],
-            "robots_required": 1,
-            "station_id": 7065,
-            "station_name": "HZ Carpark"
-          }
-        }
-      }
+      // {
+      //   "ticket": {
+      //     "status": 4,
+      //     "fulfill_by": {
+      //       "seconds": 1971856772,
+      //       "nanos": 203105400
+      //     },
+      //     "type": 3,
+      //     "title": "Deploy robots to station \"HZ Carpark\"",
+      //     "description": "Gotta deploy the bots",
+      //     "draft_fields": {},
+      //     "robot_deployment": {
+      //       "additional_robots_required": 0,
+      //       "created_by_type": 2,
+      //       "reassigned_robot_sectors": [
+      //         { "station_sector_id": 36, "vid": "" }
+      //       ],
+      //       "robots_required": 1,
+      //       "station_id": 7065,
+      //       "station_name": "HZ Carpark"
+      //     }
+      //   }
+      // }
   auth: inherit
 
 settings:

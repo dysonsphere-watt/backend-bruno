@@ -8,7 +8,7 @@ http:
   url: "{{protocol}}://{{hostname}}:{{payment_port}}/api/payment/order/:id"
   params:
     - name: id
-      value: "1634"
+      value: "2"
       type: path
   auth: inherit
 

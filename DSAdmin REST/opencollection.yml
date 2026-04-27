@@ -22,7 +22,7 @@ request:
     - name: protocol
       value: http
     - name: hostname
-      value: backend.watt.com.sg
+      value: localhost
     - name: setting_port
       value: "80"
     - name: user_port

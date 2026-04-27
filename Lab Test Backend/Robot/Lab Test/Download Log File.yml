@@ -11,7 +11,7 @@ http:
       value: ds0002
       type: path
     - name: lab_test_id
-      value: "1152"
+      value: "1178"
       type: path
   auth: inherit
 

@@ -5,11 +5,7 @@ info:
 
 http:
   method: GET
-  url: "{{protocol}}://{{hostname}}:{{payment_port}}/api/payment/order?page=32"
-  params:
-    - name: page
-      value: "32"
-      type: query
+  url: "{{protocol}}://{{hostname}}:{{payment_port}}/api/payment/order"
   auth: inherit
 
 settings:

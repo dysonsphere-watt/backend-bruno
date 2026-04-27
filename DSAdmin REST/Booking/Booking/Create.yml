@@ -19,7 +19,7 @@ http:
           },
 
           "reservation": {
-              "arrival_timestamp": "2026-04-07T18:18:00+08:00",
+              "arrival_timestamp": "2026-04-24T19:18:00+08:00",
               "duration": 60,
               "charging_service_id": 23,
               // "booking_service_id": 24,
